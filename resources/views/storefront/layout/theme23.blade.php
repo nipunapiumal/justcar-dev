@@ -131,31 +131,6 @@
                             </div>
                         @endif
                     </div>
-                    <div class="col-lg-4 col-md-4 col-sm-5 col-5">
-                        <ul class="top-social-media float-end">
-                            @if (Utility::CustomerAuthCheck($store->slug) != true)
-                                <li>
-                                    <a class="sign-in" href="{{ route('customer.login', [$store->slug]) }}">
-                                        <i class="fas fa-sign-in-alt"></i>
-                                        {{ __('Log in') }}
-                                    </a>
-                                </li>
-                                <li>
-                                    <a class="sign-in" href="{{ route('store.usercreate', [$store->slug]) }}">
-                                        <i class="fa fa-user"></i> {{ __('Register') }}
-                                    </a>
-                                </li>
-                            @else
-                                <li>
-                                    <a class="sign-in" href=""
-                                        onclick="event.preventDefault(); document.getElementById('customer-frm-logout').submit();">
-                                        <i class="fas fa-sign-out-alt"></i> {{ __('Logout') }}
-                                    </a>
-                                </li>
-                            @endif
-
-                        </ul>
-                    </div>
                 </div>
             </div>
         </header>
@@ -301,6 +276,22 @@
                                 </li>
                             @endif
 
+                           
+                            @if (Utility::CustomerAuthCheck($store->slug) != true)
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link h-icon" href="{{ route('customer.login', [$store->slug]) }}">
+                                        
+                                        {{ __('Log in') }}
+                                    </a>
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link h-icon" href="{{ route('store.usercreate', [$store->slug]) }}">
+                                        {{ __('Register') }}
+                                    </a>
+                                </li>
+                            @endif
+
+                    
 
 
 

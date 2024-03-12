@@ -119,31 +119,6 @@
                             </div>
                         @endif
                     </div>
-                    <div class="col-lg-4 col-md-4 col-sm-5 col-5">
-                        <ul class="top-social-media float-end">
-                            @if (Utility::CustomerAuthCheck($store->slug) != true)
-                                <li>
-                                    <a class="sign-in" href="{{ route('customer.login', [$store->slug]) }}">
-                                        <i class="fas fa-sign-in-alt"></i>
-                                        {{ __('Log in') }}
-                                    </a>
-                                </li>
-                                <li>
-                                    <a class="sign-in" href="{{ route('store.usercreate', [$store->slug]) }}">
-                                        <i class="fa fa-user"></i> {{ __('Register') }}
-                                    </a>
-                                </li>
-                            @else
-                                <li>
-                                    <a class="sign-in" href=""
-                                        onclick="event.preventDefault(); document.getElementById('customer-frm-logout').submit();">
-                                        <i class="fas fa-sign-out-alt"></i> {{ __('Logout') }}
-                                    </a>
-                                </li>
-                            @endif
-
-                        </ul>
-                    </div>
                 </div>
             </div>
         </header>
@@ -258,6 +233,22 @@
                                     </ul>
                                 </li>
                             @endif
+                            
+                            
+                            <!-- Updated Login -->
+                            @if (Utility::CustomerAuthCheck($store->slug) != true)
+                                        <li class="nav-item dropdown">
+                                            <a href="{{ route('customer.login', [$store->slug]) }}" class="nav-link dropdown-toggle">
+                                                {{ __('Log in') }}
+                                            </a>
+                                        </li>
+                                        <li class="nav-item dropdown">
+                                            <a href="{{ route('store.usercreate', [$store->slug]) }}" class="nav-link dropdown-toggle">
+                                                {{ __('Register') }}
+                                            </a>
+                                        </li>
+                                @endif
+                             <!-- Updated Login End -->
 
                             @if (Utility::CustomerAuthCheck($store->slug) == true)
                                 <li>

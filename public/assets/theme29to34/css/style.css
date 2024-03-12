@@ -475,7 +475,7 @@ p {
   font-family: var(--font-open-sans);
   font-weight: 600;
   font-size: 13px;
-  color: #13141A;
+  color: #FFFFFF;
   padding: 12px 20px;
   display: inline-flex;
   align-items: center;
@@ -487,7 +487,7 @@ p {
   white-space: nowrap;
 }
 .primary-btn1 svg {
-  fill: var(--title-color);
+  fill: #FFFFFF;
   transition: 0.5s;
 }
 .primary-btn1::after {
@@ -568,7 +568,7 @@ p {
   font-family: var(--font-open-sans);
   font-weight: 600;
   font-size: 15px;
-  color: #13141A;
+  color: #fff;
   padding: 11px 28px;
   display: inline-flex;
   align-items: center;
@@ -580,7 +580,7 @@ p {
   z-index: 1;
 }
 .primary-btn3 svg {
-  fill: var(--title-color);
+  color: #fff;
   transition: 0.5s;
 }
 .primary-btn3::after {
@@ -631,7 +631,7 @@ p {
   font-family: var(--font-open-sans);
   font-weight: 600;
   font-size: 15px;
-  color: #13141A;
+  color: var(--title-color);
   padding: 11px 28px;
   display: inline-flex;
   align-items: center;
@@ -3261,10 +3261,13 @@ header.style-2 .header-right ul li a svg {
   fill: var(--primary-color1);
 }
 header.style-2 .header-right ul li .primary-btn1 {
-  color: var(--title-color);
+  color: #fff;
 }
+/* header.style-2 .header-right ul li .primary-btn1 {
+  color: var(--title-color);
+} */
 header.style-2 .header-right ul li .primary-btn1 svg {
-  fill: var(--title-color);
+  fill: #fff;
 }
 header.style-2 .header-right ul li .primary-btn1:hover {
   color: var(--white-color);
@@ -4632,12 +4635,17 @@ header.style-3 .nav-right ul li button svg {
   fill: var(--primary-color1);
 }
 header.style-3 .nav-right ul li button.primary-btn1 {
-  color: var(--title-color);
+  color: #fff;
   background-color: var(--primary-color1);
   border-radius: 20px;
 }
+/* header.style-3 .nav-right ul li button.primary-btn1 {
+  color: var(--title-color);
+  background-color: var(--primary-color1);
+  border-radius: 20px;
+} */
 header.style-3 .nav-right ul li button.primary-btn1 svg {
-  fill: var(--title-color);
+  fill: #fff;
 }
 header.style-3 .nav-right ul li button:hover {
   color: var(--primary-color1);

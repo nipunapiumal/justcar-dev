@@ -267,8 +267,30 @@
                                 </li>
                             @endif
 
+                            @if (Utility::CustomerAuthCheck($store->slug) == false)
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle"
+                                href="{{ route('customer.login', $store->slug) }}" class="nav-link">
+                                {{ __('Sign in') }}
+                                </a>                    
+                            </li>
+                        @else
+                            <li class="nav-item dropdown">                        
+                                <a class="nav-link dropdown-toggle" href="#" onclick="event.preventDefault(); document.getElementById('customer-frm-logout').submit();" class="nav-link">
+                                {{ __('Logout') }}
+                                </a>
+                            </li>
+                                                <form id="customer-frm-logout"
+                                                    action="{{ route('customer.logout', $store->slug) }}"
+                                                    method="POST" class="d-none">
+                                                    {{ csrf_field() }}
+                                                </form>
+                        @endif
 
                         </ul>
+
+                        
+
                         <ul class="nav navbar-nav ml-auto w-100 justify-content-end">
                             @if (Utility::CustomerAuthCheck($store->slug) == true)
                                 <li class="nav-item">

@@ -214,6 +214,19 @@
                                 </li>
                             @endif
 
+                            @if (Utility::CustomerAuthCheck($store->slug) != true)
+                                <li>
+                                    <a href="{{ route('customer.login', [$store->slug]) }}" class="nav-link h-icon">
+                                        {{ __('Log in') }}
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="{{ route('store.usercreate', [$store->slug]) }}" class="nav-link h-icon">
+                                        {{ __('Register') }}
+                                    </a>
+                                </li>
+                            @endif
+
                             @if (Utility::CustomerAuthCheck($store->slug) == true)
                                 <li>
                                     <a href="{{ route('store.wishlist', $store->slug) }}" class="nav-link h-icon">

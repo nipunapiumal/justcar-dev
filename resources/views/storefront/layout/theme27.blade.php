@@ -266,10 +266,22 @@
                                         </ul>
                                     </li>
                                 @endif
-    
-    
+                                
+                                @if (Utility::CustomerAuthCheck($store->slug) != true)
+                                        <li class="nav-item dropdown">
+                                            <a href="{{ route('customer.login', [$store->slug]) }}" class="nav-link dropdown-toggle">
+                                                {{ __('Log in') }}
+                                            </a>
+                                        </li>
+                                        <li class="nav-item dropdown">
+                                            <a href="{{ route('store.usercreate', [$store->slug]) }}" class="nav-link dropdown-toggle">
+                                                {{ __('Register') }}
+                                            </a>
+                                        </li>
+                                @endif
                             </ul>
-                            <ul class="nav navbar-nav ml-auto w-100 justify-content-end">
+
+                            <ul class="nav navbar-nav ml-auto w-50 justify-content-end">
                                 @if (Utility::CustomerAuthCheck($store->slug) == true)
                                     <li class="nav-item">
                                         <a href="{{ route('store.wishlist', $store->slug) }}" class="nav-link h-icon">
@@ -288,7 +300,7 @@
                                             <span
                                                 class="title shopping_count position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"
                                                 style="font-family: sans-serif;font-size: 10px;"
-                                                id="shopping_count">{{ !empty($total_item) ? $total_item : '0' }}</span>
+                                                id="shopping_count">{{ !empty($total_item) ? $total_item : '0' }}22</span>
                                         </i>
                                     </a>
                                 </li>
