@@ -148,7 +148,7 @@
                             @if (Utility::CustomerAuthCheck($store->slug) != true)
                                 <li>
                                     <a class="sign-in" href="{{ route('customer.login', [$store->slug]) }}">
-                                        <i class="fa fa-sign-in"></i> {{ __('Log in') }}
+                                        <i class="fa fa-sign-in"></i> {{ __('Log In') }}
                                     </a>
                                 </li>
                                 <li>
@@ -157,10 +157,7 @@
                                     </a>
                                 </li>
                             @endif
-
-
-
-                        </ul>
+                       </ul>
                     </div>
                 </div>
             </div>
