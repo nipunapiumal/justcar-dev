@@ -1,0 +1,108 @@
+.navbar {
+    box-shadow: 0 6px 30px rgba(182, 186, 203, 0.3);
+}
+
+.content-box .content-box-middle,
+.content-box .content-box-middle2 {
+    padding: 1px 10px;
+    flex-grow: 1 !important;
+    border-right: 1px solid #f1f1f1;
+}
+
+.content-box .content-box-left {
+    min-width: 90px;
+    text-align: center;
+}
+
+.content-box .content-box-right {
+    min-width: 110px;
+    margin-left: 20px;
+
+}
+
+.content-box .content-box-right .tip {
+    font-size: 14px;
+    margin: 5px 0;
+}
+
+.categories-box a:not(:first-child) {
+    border-top: 1px solid #f1f1f1;
+}
+
+.circle-avatar .avatar {
+    color: #ffffff;
+    font-size: 180%;
+    display: flex;
+    border-radius: 45px;
+    height: 45px;
+    width: 45px;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.social-list ul li {
+    display: inline-block;
+    font-size: 16px;
+}
+
+.social-list ul li a {
+    margin: 0 3px 3px 0;
+    font-size: 16px;
+    width: 45px;
+    height: 45px;
+    color: #fff;
+    border-radius: 0;
+    display: inline-block;
+    text-align: center;
+    line-height: 45px;
+}
+
+.bg-whatsapp {
+    background-color: #4FCE5D;
+}
+.bg-facebook {
+    background-color: #4867aa;
+}
+.bg-twitter {
+    background-color: #33CCFF;
+}
+.bg-github {
+    background-color: #333333;
+}
+
+.bg-instagram {
+    background-color: #e1306c;
+}
+
+.bg-youtube {
+    background-color: #de463b;
+}
+
+.bg-whatsapp,
+.bg-github,
+.bg-instagram,
+.bg-youtube {
+    color: white;
+}
+
+.bg-whatsapp:hover,
+.bg-github:hover,
+.bg-instagram:hover,
+.bg-youtube:hover {
+    opacity: 0.9;
+}
+
+.replies .box:nth-child(even) {
+    background: #F9F9F9;
+}
+.replies .box:last-child {
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.replies .box{
+    margin: -25px;
+    /* background: #f7f7f7; */
+    padding: 25px 25px;
+}

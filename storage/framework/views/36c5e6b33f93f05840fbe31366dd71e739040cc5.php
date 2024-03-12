@@ -1,0 +1,1 @@
+<?php echo $__env->make('storefront.theme26.pageslug', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH /Users/optimaz_id/Sites/justcar/resources/views/storefront/theme27/pageslug.blade.php ENDPATH**/ ?>

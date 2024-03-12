@@ -1,0 +1,324 @@
+/* ---------------------------------- */
+
+
+/* Prime select box 
+------------------------------------- */
+
+
+/* .prime-select {
+    position: relative;
+    top: -2px;
+    padding: 35px 15px;
+} */
+
+/* .prime-select select { */
+/* display: none; */
+/*hide original SELECT element: */
+/* } */
+
+.select-selected {
+    border: 1px solid transparent;
+    cursor: pointer;
+    border-radius: 4px;
+    color: #000;
+}
+
+
+/* Style the arrow inside the select element: */
+
+.select-selected:after {
+    display: inline-block;
+    border-right: 4px solid transparent;
+    border-left: 4px solid transparent;
+    content: "";
+    border-bottom: 4px dashed;
+    border-bottom: 4px solid \9;
+    position: absolute;
+    top: 50%;
+    right: -10px;
+    margin-top: -2px;
+    vertical-align: middle;
+    transition: 0.35s;
+}
+
+
+/* Point the arrow upwards when the select box is open (active): */
+
+.select-selected.select-arrow-active:after {
+    transform: rotate(180deg);
+}
+
+
+/* style the items (options), including the selected item: */
+
+.select-items div {
+    color: #30303c;
+    padding: 7px 7px;
+    cursor: pointer;
+    /* font-size: 17px; */
+    border-bottom: 1px solid #eeeeee;
+}
+
+
+/* Style items (options): */
+
+.select-items {
+    width: 90px;
+    text-align: left;
+    position: absolute;
+    background-color: #fff;
+    right: 10px;
+    z-index: 9999999999;
+    transition: 0.4s;
+    display: block;
+    opacity: 1;
+    pointer-events: all;
+    visibility: visible;
+    max-height: 350px;
+    overflow-y: scroll;
+    box-shadow: 0 1px 4px 0px rgb(0 0 0 / 5%);
+    border-radius: 5px;
+    bottom: -50px;
+}
+
+
+/* Hide the items when the select box is closed: */
+
+.select-hide {
+    opacity: 0;
+    pointer-events: none;
+    visibility: hidden;
+    cursor: default;
+}
+
+.select-items div:hover,
+.same-as-selected {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.cover {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+
+/*== Profile Avatar ==*/
+
+.wrap-custom-file {
+    height: auto;
+    position: relative;
+}
+
+.wrap-custom-file input[type="file"] {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 2px;
+    height: 2px;
+    overflow: hidden;
+    opacity: 0;
+}
+
+.wrap-custom-file label {
+    background-image: url(../img/avatar/avatar-1.png);
+    background-size: cover;
+    background-position: center center;
+    border-radius: 50%;
+    bottom: 0;
+    cursor: pointer;
+    height: 150px;
+    left: 0;
+    position: relative;
+    right: 0;
+    top: 0;
+    width: 150px;
+    z-index: 1;
+    -webkit-transition: -webkit-transform 0.4s;
+    transition: -webkit-transform 0.4s;
+    transition: transform 0.4s;
+    transition: transform 0.4s, -webkit-transform 0.4s;
+}
+
+.wrap-custom-file label span,
+.wrap-custom-file label.file-ok span {
+    background-color: #333333;
+    border: 1px solid #333333;
+    border-radius: 2px;
+    bottom: -106%;
+    display: block;
+    font-size: 13px;
+    color: #90939c;
+    font-style: normal;
+    font-weight: 600;
+    letter-spacing: 0em;
+    height: 50px;
+    left: 170px;
+    line-height: 50px;
+    margin: 0 auto;
+    overflow: hidden;
+    position: relative;
+    right: 0;
+    top: 50px;
+    text-align: center;
+    width: 160px;
+    text-transform: uppercase;
+}
+
+.wrap-custom-file label i {
+    color: #1947E2;
+    display: inline-block;
+    font-size: 20px;
+    margin-right: 5px;
+    -webkit-transform: rotate(-180deg);
+    -moz-transform: rotate(-180deg);
+    -o-transform: rotate(-180deg);
+    transform: rotate(-180deg);
+}
+
+.wrap-custom-file label.file-ok {
+    background-size: cover;
+    background-position: center;
+}
+
+.wrap-custom-file label.file-ok .fa {
+    display: none;
+}
+
+.wrap-custom-file small.file_title {
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 16px;
+    letter-spacing: 0em;
+    left: 350px;
+    position: absolute;
+    top: 42%;
+}
+
+.avatar-upload {
+    position: relative;
+}
+
+.avatar-upload .avatar-edit {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 27%;
+}
+
+.avatar-upload .avatar-edit input {
+    display: none;
+}
+
+.avatar-upload .avatar-edit input+label {
+    height: 50px;
+    border-radius: 3px;
+    background-color: rgb(29, 41, 62);
+    cursor: pointer;
+    font-size: 16px;
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+    line-height: 30px;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    -webkit-transition: all .3s ease-in-out;
+    -moz-transition: all .3s ease-in-out;
+    -o-transition: all .3s ease-in-out;
+    transition: all .3s ease-in-out;
+}
+
+.avatar-upload .avatar-edit input+label:hover {
+    background-color: #ffffff;
+    border: 1px solid #1947E2;
+}
+
+.avatar-upload .avatar-edit input+label:hover:after {
+    color: #1947E2;
+}
+
+.avatar-upload .avatar-edit input+label::after {
+    content: "Upload";
+    color: #ffffff;
+    position: absolute;
+    top: 10px;
+    left: 0;
+    right: 0;
+    text-align: center;
+    margin: auto;
+}
+
+.avatar-upload .avatar-preview {
+    height: 50px;
+    left: 0;
+    position: absolute;
+    width: 70%;
+}
+
+.avatar-upload #imagePreview {
+    background-color: #ffffff;
+    border: 1px solid #EAEAEA;
+    border-radius: 3px;
+    height: 100%;
+}
+
+
+.advertisement-block {
+    /* margin-top: 70px; */
+    margin-bottom: 70px;
+}
+.advertisement-block img {
+    height: auto !important;
+}
+
+.contact-1 .contact-innner {
+    margin: 0 auto 100px;
+}
+
+@media (max-width: 768px) {
+    .contact-1 .contact-innner {
+        margin: 0 auto 60px;
+    }
+}
+
+@media (max-width: 992px) {
+    .contact-1 .contact-innner {
+        margin: 0 auto 80px;
+    }
+}
+
+/* @media (min-width: 992px) {
+    .nav-icons {
+        display: none !important;
+    }
+} */
+
+#chat-application {
+    right: 65px !important;
+    bottom: 3px !important;
+}
+
+.main-header .navbar-expand-lg .navbar-nav .nav-link.icon:hover {
+    color: #000 !important;
+}
+
+.car-box-3 .ratings i {
+    color: #e6e6e6;
+}
+
+.details-banner .text .ratings-2 i {
+    color: #e6e6e6;
+}
+
+/* .car-box-5 img{
+height: inherit !important;
+} */
+
+.details-banner .cover-buttons ul li a {
+    background: rgb(255 180 0);
+}
+
+.details-banner .cover-buttons ul li a.disabled {
+    background: rgb(187 187 187);
+}

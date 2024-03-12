@@ -1,0 +1,85 @@
+@extends('storefront.layout.theme16to21')
+@section('page-title')
+    {{ __('Blog') }}
+@endsection
+@php
+    if (!empty(session()->get('lang'))) {
+        $currantLang = session()->get('lang');
+    } else {
+        $currantLang = $store->lang;
+    }
+    $languages = \App\Models\Utility::languages();
+    
+@endphp
+@section('content')
+    <!-- Sub banner start -->
+    <div class="sub-banner">
+        <div class="container breadcrumb-area">
+            <div class="breadcrumb-areas">
+                <h1>{{ __('Blog') }}</h1>
+                <ul class="breadcrumbs">
+                    <li><a href="{{ route('store.slug', $store->slug) }}">{{ __('Home') }}</a></li>
+                    <li class="active">{{ __('Blog') }}</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- Sub Banner end -->
+
+    <!-- Blog body start -->
+<div class="blog-body content-area">
+    <div class="container">
+        <div class="row">
+            @foreach($blogs as $blog)
+            <div class="col-lg-4 col-md-6">
+                <div class="blog-1">
+                    <div class="blog-image">
+                        {{-- <img src="img/blog/blog-1.png" alt="blog-1" > --}}
+                        @if (!empty($blog->blog_cover_image) && \Storage::exists('uploads/store_logo/' . $blog->blog_cover_image))
+                                    <img class="img-fluid bp" alt="Image placeholder" style="width:100%;height: 253px;object-fit: cover;"
+                                        src="{{ asset(Storage::url('uploads/store_logo/' . $blog->blog_cover_image)) }}">
+                                @else
+                                    <img class="img-fluid bp" alt="Image placeholder" style="width:100%;height: 253px;object-fit: cover;"
+                                        src="{{ asset(Storage::url('uploads/store_logo/default.jpg')) }}">
+                                @endif
+                        <div class="date-box">
+                            <span>{{date("d", strtotime($blog->created_at))}}</span>{{date("M", strtotime($blog->created_at))}}
+                        </div>
+                        {{-- <div class="profile-user">
+                            <img src="img/avatar/avatar-1.png" alt="user">
+                        </div> --}}
+                    </div>
+                    <div class="detail">
+                        <div class="post-meta clearfix">
+                            <ul>
+                                <li>
+                                    <strong><a href="#"><i class="fa fa-calendar"></i> {{ \App\Models\Utility::dateFormat($blog->created_at) }}</a></strong>
+                                </li>
+                                {{-- <li class="float-right"><a href="#"><i class="flaticon-comment"></i></a>17K</li> --}}
+                                {{-- <li class="float-right"><a href="#"><i class="flaticon-calendar"></i></a>73k</li> --}}
+                            </ul>
+                        </div>
+                        <h4>
+                            <a href="{{ route('store.store_blog_view', [$store->slug, $blog->id]) }}">{{ $blog->title }}</a>
+                        </h4>
+                        {{-- <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry</p> --}}
+                    </div>
+                </div>
+            </div>
+            @endforeach
+        </div>
+       
+    </div>
+</div>
+<!-- Blog body end -->
+@endsection
+@push('script')
+    <script>
+        $(document).ready(function() {
+            var blog = {{ sizeof($blogs) }};
+            if (blog < 1) {
+                window.location.href = "{{ route('store.slug', $store->slug) }}";
+            }
+        });
+    </script>
+@endpush

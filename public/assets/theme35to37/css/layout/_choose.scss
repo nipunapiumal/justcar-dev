@@ -1,0 +1,87 @@
+/* -----------------------------------------
+    Choose CSS
+----------------------------------------- */
+.choose-area {
+    position: relative;
+    overflow: hidden;
+
+    .info-list{
+        border-inline-start: 5px solid var(--color-primary);
+
+        >div{
+            padding-inline-start: 20px;
+        }
+    }
+
+    .card-icon{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 80px;
+        height: 80px;
+        font-size: 42px;
+        color: var(--color-primary);
+        box-shadow: 0px 8px 20px rgba(39, 39, 39, 0.08);
+        border-bottom: 1px solid var(--color-primary);
+    }
+
+    .card-content{
+        padding-inline-start: 20px;
+    }
+
+    .shape{
+        position: absolute;
+        top: 100px;
+        left: 0;
+        height: calc(100% - 200px);
+        z-index: -1;
+        overflow: hidden;
+        img{
+            height: 100%;
+        }
+    }
+}
+
+.choose-1 {
+    .shape {
+        img{
+            clip-path: polygon(50% 0%, 100% 100%, 0% 100%, 0% 0%);
+        }
+    }
+}
+
+.choose-2{
+    .info-list{
+        border-inline-start: unset;
+
+        >div{
+            padding-inline-start: unset;
+        }
+    }
+}
+.choose-3{
+    .info-list{
+        border-inline-start: unset;
+        border: 2px solid var(--color-primary);
+        padding: 0 25px 30px;
+
+        >div{
+            padding-inline-start: unset;
+        }
+    }
+
+    .card{
+        &-icon{
+            border: unset;
+            width: 60px;
+            height: 60px;
+            font-size: 42px;
+            margin-inline-end: 15px;
+            box-shadow: unset;
+
+            i{
+                margin-inline-end: -40px;
+            }
+        }
+    }
+}

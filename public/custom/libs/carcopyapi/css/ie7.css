@@ -1,0 +1,8 @@
+@CHARSET "UTF-8";
+
+div.carPreview div.carcontent {
+	clear:left;
+	border:1px solid #536BB5;
+	margin-top:0px;
+	padding:10px;
+}

@@ -1,0 +1,31 @@
+/* -----------------------------------------
+    Reset CSS
+----------------------------------------- */
+:focus {
+    outline: none;
+}
+
+img{
+    max-width: 100%;
+}
+
+.form-control {
+    &:focus {
+        box-shadow: none;
+    }
+}
+
+ul{
+    padding: 0;
+}
+
+figure,
+blockquote,
+ul {
+    margin-bottom: 0;
+}
+
+table, th, td{
+    vertical-align: middle;
+}
+

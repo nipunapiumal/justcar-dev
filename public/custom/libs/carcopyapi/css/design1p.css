@@ -1,0 +1,140 @@
+@CHARSET "UTF-8";
+
+body {
+	font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 10pt;
+	text-align:left;
+}
+
+
+h1, h2, h3, h4, h5, h6 {
+	text-align:left;
+}
+
+div.carPreview {
+	margin:10px;
+	padding:10px;
+}
+
+div.carPreview h2.cartitle {
+	font-size:1.8em;
+	font-weight:lighter;
+}
+
+div.carPreview h2.cartitle img {
+	display:none;
+}
+
+div.carPreview div.carnav ol.tabs {
+	list-style-type:none;
+}
+
+div.carPreview div.carnav ol.tabs li {
+	display: block;
+	list-style: none;
+	float:left;
+	position:relative;
+}
+
+div.carPreview div.carnav {
+	padding-top:30px;
+}
+
+div.carPreview ol.tabs li {
+	background-color:#D9E0F0;
+	margin:0;
+	padding:0;
+	margin-right:8px;
+	padding:4px 4px;
+}
+
+div.carPreview ol.tabs li a {
+	color:#000000;
+	text-decoration:none;
+}
+
+div.carPreview div.carcontent {
+	border:0px;
+}
+
+div.carPreview span.moreLink a {
+	display:none;
+}
+
+div.carPreview ol.tabs {
+	display:none;
+}
+
+
+
+
+div.pictures {
+	width:400px;
+	height: 270px;
+	padding:5px;
+	background-color:#ffffff;
+}
+
+div.allPictures div.previewPics,
+div.allPictures div.previewPicsUnder,
+div.pictures div.previewPics,
+div.pictures div.previewPicsUnder {
+	clear:both;
+	display:none;
+}
+
+div.pictures div.mainPic {
+	float:right;
+	width:400px;
+}
+
+
+
+
+
+
+
+div.carPreview div.carcontent div.contentBlock {
+	margin-bottom:0.8em;
+	text-align: justify;
+}
+
+div.carPreview div.carcontent div.contentBlock h3 {
+	font-weight:bold;
+	font-size:1.1em;
+	margin-bottom:0.2em;
+}
+
+div.carPreview div.carcontent div.contentBlock h4 {
+	font-weight:bold;
+	font-size:1em;
+	margin-bottom:0.1em;
+}
+
+div.carPreview div.carcontent div.shortNumbers {
+	padding-bottom:15px;
+}
+
+div.carPreview div.carcontent div.shortNumbers span.legend {
+	float:left;
+	display:block;
+	width:18em;
+}
+
+div.carPreview div.carcontent div.shortNumbers span.value {
+	font-weight:bold;
+}
+
+div.carPreview div.carcontent span.small {
+	font-size:0.7em;
+}
+
+
+/** Kontaktformular ausblenden **/
+div.carPreview div.carcontent div.contact {
+	display:none;
+}
+
+#tools {
+	display:none;
+}

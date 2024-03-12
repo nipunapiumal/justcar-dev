@@ -1,0 +1,332 @@
+/*------------------------------------------------------------------
+    Project:        A JavaScript Notification Service
+    Version:        1.2.0
+    Last change:    10/22/18
+    Author:         Klaus Brandner
+
+    [CSS STRUCTURE]
+    * Notification List / #aco-notification-list
+        + Notification / .aco-notification
+            - Notification Icon / .aco-notification-icon
+            - Notification Content / .aco-notification-content
+                - Notification Title / .aco-notification-title
+                - Notification Message / .aco-notification-message
+                - Notification Close Button / .aco-notification-close-btn
+
+    [Color codes]
+        Notification Type Info: linear-gradient(to bottom right, #4A4A4A, #2B2B2B)
+        Notification Type Success: linear-gradient(to bottom right, #42B224, #61D461)
+        Notification Type Warning: linear-gradient(to bottom right, #F7971E, #FFD200)
+        Notification Type Error: linear-gradient(to bottom right, #FF416C, #FF4B2B)
+
+    -------------------------------------------------------------------*/
+
+#aco-notification-list {
+    position: fixed;
+    z-index: 30000;
+    width: 330px;
+    font-family: Arial;
+    font-size: 16px;
+    line-height: 110%;
+}
+
+#aco-notification-list .aco-notification {
+    position: relative;
+    display: flex;
+    align-items: stretch;
+    justify-content: flex-start;
+    margin: 10px 0 0;
+    color: #fff;
+    border-radius: 5px;
+    background: linear-gradient(to bottom right, #4A4A4A, #2B2B2B);
+    box-shadow: 4px 4px 25px rgba(0, 0, 0, 0.25);
+}
+
+#aco-notification-list .aco-notification.aco-notification-type-info {
+    background: linear-gradient(to bottom right, #4A4A4A, #2B2B2B);
+}
+
+#aco-notification-list .aco-notification.aco-notification-type-success {
+    background: linear-gradient(to bottom right, #42B224, #61D461);
+}
+
+#aco-notification-list .aco-notification.aco-notification-type-warning {
+    background: linear-gradient(to bottom right, #F7971E, #FFD200);
+}
+
+#aco-notification-list .aco-notification.aco-notification-type-error {
+    background: linear-gradient(to bottom right, #FF416C, #FF4B2B);
+}
+
+#aco-notification-list .aco-notification .aco-notification-icon {
+    display: flex;
+    align-items: center;
+    padding: 0 15px 0;
+}
+
+#aco-notification-list .aco-notification .aco-notification-icon .aco-svg {
+    width: 35px;
+    height: 35px;
+}
+
+#aco-notification-list .aco-notification .aco-notification-content {
+    padding: 13px 20px 13px 0;
+}
+
+#aco-notification-list .aco-notification .aco-notification-content .aco-notification-title {
+    margin: 0 0 2px 0;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+#aco-notification-list .aco-notification .aco-notification-content .aco-notification-message {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 0.8rem;
+}
+
+#aco-notification-list .aco-notification .aco-notification-content .aco-notification-close-btn {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    padding: 8px;
+    cursor: pointer;
+    line-height: 10px;
+}
+
+#aco-notification-list .aco-notification .aco-notification-content .aco-notification-close-btn .aco-svg {
+    width: 10px;
+    height: 10px;
+}
+
+#aco-notification-list.top-left {
+    top: 20px;
+    left: 20px;
+}
+
+#aco-notification-list.top-left .aco-notification {
+    animation: aco-slide-right 0.4s ease-out;
+}
+
+#aco-notification-list.top-left .aco-notification.aco-notification-status-close {
+    animation: aco-slide-right-close 0.4s ease-out;
+}
+
+#aco-notification-list.top-right {
+    top: 20px;
+    right: 20px;
+}
+
+#aco-notification-list.top-right .aco-notification {
+    animation: aco-slide-left 0.4s ease-out;
+}
+
+#aco-notification-list.top-right .aco-notification.aco-notification-status-close {
+    animation: aco-slide-left-close 0.4s ease-out;
+}
+
+#aco-notification-list.top-center {
+    top: 20px;
+    left: 50%;
+    transform: translate(-50%, 0);
+}
+
+#aco-notification-list.top-center .aco-notification {
+    animation: aco-slide-down 0.4s ease-out;
+}
+
+#aco-notification-list.top-center .aco-notification.aco-notification-status-close {
+    animation: aco-slide-down-close 0.4s ease-out;
+}
+
+#aco-notification-list.bottom-left {
+    bottom: 20px;
+    left: 20px;
+}
+
+#aco-notification-list.bottom-left .aco-notification {
+    animation: aco-slide-right 0.4s ease-out;
+}
+
+#aco-notification-list.bottom-left .aco-notification.aco-notification-status-close {
+    animation: aco-slide-right-close 0.4s ease-out;
+}
+
+#aco-notification-list.bottom-right {
+    bottom: 20px;
+    right: 20px;
+}
+
+#aco-notification-list.bottom-right .aco-notification {
+    animation: aco-slide-left 0.4s ease-out;
+}
+
+#aco-notification-list.bottom-right .aco-notification.aco-notification-status-close {
+    animation: aco-slide-left-close 0.4s ease-out;
+}
+
+#aco-notification-list.bottom-center {
+    bottom: 20px;
+    left: 50%;
+    transform: translate(-50%, 0);
+}
+
+#aco-notification-list.bottom-center .aco-notification {
+    animation: aco-slide-up 0.4s ease-out;
+}
+
+#aco-notification-list.bottom-center .aco-notification.aco-notification-status-close {
+    animation: aco-slide-up-close 0.4s ease-out;
+}
+
+
+/**
+ * Show and hide animations for notifications
+ */
+
+@keyframes aco-slide-right {
+    0% {
+        transform: translate(-200px, 0);
+        opacity: 0;
+    }
+    50% {
+        transform: translate(20px, 0);
+    }
+    100% {
+        transform: translate(0, 0);
+        opacity: 1;
+    }
+}
+
+@keyframes aco-slide-right-close {
+    0% {
+        transform: translate(0, 0);
+        opacity: 1;
+    }
+    100% {
+        transform: translate(-100%, 0);
+        opacity: 0;
+    }
+}
+
+@keyframes aco-slide-left {
+    0% {
+        transform: translate(200px, 0);
+        opacity: 0;
+    }
+    50% {
+        transform: translate(-20px, 0);
+    }
+    100% {
+        transform: translate(0, 0);
+        opacity: 1;
+    }
+}
+
+@keyframes aco-slide-left-close {
+    0% {
+        transform: translate(0, 0);
+        opacity: 1;
+    }
+    100% {
+        transform: translate(100%, 0);
+        opacity: 0;
+    }
+}
+
+@keyframes aco-slide-up {
+    0% {
+        transform: translate(0, 50px);
+        opacity: 0;
+    }
+    50% {
+        transform: translate(0, -3px);
+    }
+    100% {
+        transform: translate(0, 0);
+        opacity: 1;
+    }
+}
+
+@keyframes aco-slide-up-close {
+    0% {
+        transform: translate(0, 0);
+        opacity: 1;
+    }
+    100% {
+        transform: translate(0, 100%);
+        opacity: 0;
+    }
+}
+
+@keyframes aco-slide-down {
+    0% {
+        transform: translate(0, -50px);
+        opacity: 0;
+    }
+    50% {
+        transform: translate(0, 3px);
+    }
+    100% {
+        transform: translate(0, 0);
+        opacity: 1;
+    }
+}
+
+@keyframes aco-slide-down-close {
+    0% {
+        transform: translate(0, 0);
+        opacity: 1;
+    }
+    100% {
+        transform: translate(0, -100%);
+        opacity: 0;
+    }
+}
+
+
+/* Display notifications at the top or bottom on smaller screens */
+
+@media only screen and (max-width: 400px) {
+    #aco-notification-list {
+        width: 100%;
+    }
+    #aco-notification-list .aco-notification {
+        margin: 10px 10px 0;
+    }
+    #aco-notification-list.top-left,
+    #aco-notification-list.top-right,
+    #aco-notification-list.top-center {
+        top: 45px;
+        bottom: auto;
+        left: 0;
+        right: auto;
+    }
+    #aco-notification-list.top-left .aco-notification,
+    #aco-notification-list.top-right .aco-notification,
+    #aco-notification-list.top-center .aco-notification {
+        animation: aco-slide-down 0.4s ease-out;
+    }
+    #aco-notification-list.top-left .aco-notification.aco-notification-status-close,
+    #aco-notification-list.top-right .aco-notification.aco-notification-status-close,
+    #aco-notification-list.top-center .aco-notification.aco-notification-status-close {
+        animation: aco-slide-down-close 0.4s ease-out;
+    }
+    #aco-notification-list.bottom-left,
+    #aco-notification-list.bottom-right,
+    #aco-notification-list.bottom-center {
+        top: auto;
+        bottom: 10px;
+        left: 0;
+        right: auto;
+    }
+    #aco-notification-list.bottom-left .aco-notification,
+    #aco-notification-list.bottom-right .aco-notification,
+    #aco-notification-list.bottom-center .aco-notification {
+        animation: aco-slide-up 0.4s ease-out;
+    }
+    #aco-notification-list.bottom-left .aco-notification.aco-notification-status-close,
+    #aco-notification-list.bottom-right .aco-notification.aco-notification-status-close,
+    #aco-notification-list.bottom-center .aco-notification.aco-notification-status-close {
+        animation: aco-slide-up-close 0.4s ease-out;
+    }
+}

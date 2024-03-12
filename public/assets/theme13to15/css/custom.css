@@ -1,0 +1,454 @@
+/*== Cart page qty min & max styles ==*/
+
+.count-input {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.count-input .qty-minus,
+.count-input .qty-plus {
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 16px;
+    letter-spacing: 0em;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 16px;
+    letter-spacing: 0em;
+    background-color: #F5C34B;
+    border: 1px solid #F5C34B;
+    color: #1A3760;
+    -webkit-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+
+.count-input .qty-minus {
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+}
+
+.count-input .qty-plus {
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+}
+
+.count-input .qty {
+    max-width: 75px;
+}
+
+.box-space {
+    padding: 1rem 1.5rem;
+    margin-bottom: 0;
+    background-color: transparent;
+}
+
+.h6 {
+    font-size: 1rem;
+}
+
+.footer_about_widget.home2 p a,
+.footer_contact_widget.home2 p a,
+.copyright-widget.home2 p a,
+.footer_contact_widget.home3 p a {
+    color: rgba(26, 55, 96, 0.7);
+}
+
+.footer_about_widget p a,
+.footer_contact_widget p a {
+    color: #a8a8a8;
+}
+
+.car-listing .thumb .img-1 {
+    width: 285px;
+    height: 185px;
+    object-fit: cover;
+}
+
+.home2 .header_top_contact_opening_widget ul li a,
+.home2 .header_top_social_widgets ul li a {
+    color: #1a3760;
+}
+
+.header_top.home2 {
+    border-bottom: 1px solid rgb(24 23 23 / 10%);
+}
+
+.dark .header_top_contact_opening_widget ul li a,
+.dark .header_top_social_widgets ul li a {
+    color: #1a3760;
+}
+
+.header_top.dark {
+    border-bottom: 1px solid rgb(24 23 23 / 10%);
+}
+
+.style10 {
+    position: relative;
+    z-index: 9;
+    height: 105px !important;
+}
+
+.main-menu ul .nav-icons{
+    display: none;
+}
+
+
+/* ---------------------------------- */
+
+
+/* Prime select box 
+------------------------------------- */
+
+.prime-select {
+    position: relative;
+    /* top: 28px; */
+    width: 75px;
+    float: right;
+    font-family: "oswaldmedium";
+    text-transform: uppercase;
+}
+
+@media (max-width: 768px) {
+    .header-bottom .right-content {
+        display: none !important;
+    }
+
+    .main-menu ul .nav-icons{
+        display: block !important;
+    }
+
+}
+
+.prime-select select {
+    display: none;
+    /*hide original SELECT element: */
+}
+
+.select-selected {
+    /* padding: 15px 15px; */
+    border: 1px solid transparent;
+    cursor: pointer;
+    border-radius: 4px;
+    /* font-size: 17px; */
+    /* outline: none; */
+    /* background: #fff; */
+    /* border: 0; */
+    /* border-bottom: 2px solid #e6e6e6; */
+    color: white;
+}
+
+
+/* Style the arrow inside the select element: */
+
+.select-selected:after {
+    display: inline-block;
+    border-right: 4px solid transparent;
+    border-left: 4px solid transparent;
+    content: "";
+    border-bottom: 4px dashed;
+    border-bottom: 4px solid \9;
+    position: absolute;
+    top: 50%;
+    right: -10px;
+    margin-top: -2px;
+    vertical-align: middle;
+    transition: 0.35s;
+}
+
+
+/* Point the arrow upwards when the select box is open (active): */
+
+.select-selected.select-arrow-active:after {
+    transform: rotate(180deg);
+}
+
+
+/* style the items (options), including the selected item: */
+
+.select-items div {
+    color: #30303c;
+    padding: 7px 7px;
+    cursor: pointer;
+    /* font-size: 17px; */
+    border-bottom: 1px solid #eeeeee;
+}
+
+
+/* Style items (options): */
+
+.select-items {
+    width: 90px;
+    text-align: left;
+    position: absolute;
+    background-color: #fff;
+    top: 155%;
+    /* left: 0; */
+    right: -12px;
+    z-index: 9999999999;
+    transition: 0.4s;
+    display: block;
+    opacity: 1;
+    pointer-events: all;
+    visibility: visible;
+    max-height: 350px;
+    overflow-y: scroll;
+    box-shadow: 0 1px 4px 0px rgb(0 0 0 / 5%);
+    border-radius: 5px;
+}
+
+
+/* Hide the items when the select box is closed: */
+
+.select-hide {
+    opacity: 0;
+    pointer-events: none;
+    visibility: hidden;
+    cursor: default;
+}
+
+.select-items div:hover,
+.same-as-selected {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.car-listing.gallery .thumb {
+    height: 240px;
+}
+
+.cover {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.car-listing {
+    background-color: #fff;
+    /* border: 1px solid #EAEAEA; */
+    border-radius: 8px;
+    margin-bottom: 30px;
+    padding: 10px;
+    position: relative;
+}
+
+.car-listing .thumb {
+    border-radius: 8px;
+    overflow: hidden;
+    position: relative;
+    z-index: 0;
+}
+
+.car-listing:hover .thumb {
+    background: linear-gradient(180deg, rgba(12, 18, 39, 0) 28.42%, rgba(12, 18, 39, 0.8) 100%);
+}
+
+.car-listing .thumb:before {
+    /* background-image: linear-gradient(to bottom, transparent 0%, #0C1227 100%); */
+    bottom: 0;
+    content: "";
+    height: 100px;
+    left: 0;
+    opacity: 0;
+    position: absolute;
+    right: 0;
+    z-index: 1;
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -ms-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+}
+
+.car-listing:hover .thumb:before {
+    opacity: 1;
+}
+
+.car-listing .thumb img {
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1);
+    -ms-transform: scale(1);
+    -o-transform: scale(1);
+    transform: scale(1);
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -ms-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+
+.car-listing:hover .thumb img {
+    -webkit-transform: scale(1.1);
+    -moz-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    -o-transform: scale(1.1);
+    transform: scale(1.1);
+}
+
+
+/*== Profile Avatar ==*/
+
+.wrap-custom-file {
+    height: auto;
+    position: relative;
+}
+
+.wrap-custom-file input[type="file"] {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 2px;
+    height: 2px;
+    overflow: hidden;
+    opacity: 0;
+}
+
+.wrap-custom-file label {
+    background-image: url(../img/team/1.jpg);
+    background-size: cover;
+    background-position: center center;
+    border-radius: 50%;
+    bottom: 0;
+    cursor: pointer;
+    height: 150px;
+    left: 0;
+    position: relative;
+    right: 0;
+    top: 0;
+    width: 150px;
+    z-index: 1;
+    -webkit-transition: -webkit-transform 0.4s;
+    transition: -webkit-transform 0.4s;
+    transition: transform 0.4s;
+    transition: transform 0.4s, -webkit-transform 0.4s;
+}
+
+.wrap-custom-file label span,
+.wrap-custom-file label.file-ok span {
+    background-color: #333333;
+    border: 1px solid #333333;
+    border-radius: 2px;
+    bottom: -106%;
+    display: block;
+    font-size: 13px;
+    color: #90939c;
+    font-style: normal;
+    font-weight: 600;
+    letter-spacing: 0em;
+    height: 50px;
+    left: 170px;
+    line-height: 50px;
+    margin: 0 auto;
+    overflow: hidden;
+    position: relative;
+    right: 0;
+    top: 50px;
+    text-align: center;
+    width: 160px;
+    text-transform: uppercase;
+}
+
+.wrap-custom-file label i {
+    color: #1947E2;
+    display: inline-block;
+    font-size: 20px;
+    margin-right: 5px;
+    -webkit-transform: rotate(-180deg);
+    -moz-transform: rotate(-180deg);
+    -o-transform: rotate(-180deg);
+    transform: rotate(-180deg);
+}
+
+.wrap-custom-file label.file-ok {
+    background-size: cover;
+    background-position: center;
+}
+
+.wrap-custom-file label.file-ok .fa {
+    display: none;
+}
+
+.wrap-custom-file small.file_title {
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 16px;
+    letter-spacing: 0em;
+    left: 350px;
+    position: absolute;
+    top: 42%;
+}
+
+.avatar-upload {
+    position: relative;
+}
+
+.avatar-upload .avatar-edit {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 27%;
+}
+
+.avatar-upload .avatar-edit input {
+    display: none;
+}
+
+.avatar-upload .avatar-edit input+label {
+    height: 50px;
+    border-radius: 3px;
+    background-color: rgb(29, 41, 62);
+    cursor: pointer;
+    font-size: 16px;
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+    line-height: 30px;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    -webkit-transition: all .3s ease-in-out;
+    -moz-transition: all .3s ease-in-out;
+    -o-transition: all .3s ease-in-out;
+    transition: all .3s ease-in-out;
+}
+
+.avatar-upload .avatar-edit input+label:hover {
+    background-color: #ffffff;
+    border: 1px solid #1947E2;
+}
+
+.avatar-upload .avatar-edit input+label:hover:after {
+    color: #1947E2;
+}
+
+.avatar-upload .avatar-edit input+label::after {
+    content: "Upload";
+    color: #ffffff;
+    position: absolute;
+    top: 10px;
+    left: 0;
+    right: 0;
+    text-align: center;
+    margin: auto;
+}
+
+.avatar-upload .avatar-preview {
+    height: 50px;
+    left: 0;
+    position: absolute;
+    width: 70%;
+}
+
+.avatar-upload #imagePreview {
+    background-color: #ffffff;
+    border: 1px solid #EAEAEA;
+    border-radius: 3px;
+    height: 100%;
+}
+
+#chat-application{
+    right: 55px !important;
+    bottom: 0px !important;
+}

@@ -1,0 +1,477 @@
+@CHARSET "UTF-8";
+/*
+ * Colors:
+ * 	#D9E0F0
+ *	#536BB5
+ *	#BEC4D2
+ */
+
+body {
+	font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 10pt;
+	text-align:left;
+}
+
+
+h1, h2, h3, h4, h5, h6 {
+	text-align:left;
+}
+
+
+
+
+
+
+
+
+
+
+/** Detailseite **/
+div.carPreview {
+	margin:10px;
+	padding:10px;
+}
+
+div.carPreview h2.cartitle {
+	font-size:1.8em;
+	font-weight:lighter;
+}
+
+div.carPreview h2.cartitle img {
+	border:1px solid #BEC4D2;
+	vertical-align:middle;
+}
+
+div.carPreview div.carnav ol.tabs {
+	list-style-type:none;
+}
+
+div.carPreview div.carnav ol.tabs li {
+	display: block;
+	list-style: none;
+	float:left;
+	position:relative;
+}
+
+div.carPreview div.carnav {
+	padding-top:30px;
+}
+
+div.carPreview ol.tabs li {
+	background-color:#D9E0F0;
+	margin:0;
+	padding:0;
+	margin-right:8px;
+	padding:4px 4px;
+}
+
+div.carPreview ol.tabs li a {
+	color:#000000;
+	text-decoration:none;
+}
+
+div.carPreview div.carcontent {
+	clear:left;
+	border:1px solid #536BB5;
+	margin-top:22px;
+	padding:10px;
+}
+
+div.carPreview span.moreLink a {
+	font-weight:bold;
+	color:#536BB5;
+	text-decoration:none;
+}
+
+div.carPreview ol.tabs li.active {
+	background-color:#536BB5;
+}
+
+div.carPreview ol.tabs li.active a {
+	color:#ffffff;
+}
+
+div.carPreview ol.tabs li.active {
+	padding-bottom:6px;
+}
+
+
+
+
+div.pictures {
+	float:right;
+	width:485px;
+	height: 300px;
+	padding:5px;
+	background-color:#ffffff;
+	margin-left:0.8em;
+}
+
+div.pictures div.previewPics {
+	float:left;
+	width:80px;
+}
+
+div.pictures div.previewPicsUnder {
+	clear:both;
+}
+
+div.pictures div.previewPicsUnder img {
+	margin-top:0px;
+	margin-right:4px;
+}
+
+div.pictures div.previewPics img {
+	margin-bottom:6px;
+}
+
+div.pictures div.mainPic {
+	float:right;
+	width:400px;
+}
+
+
+div.pictures div.mainPic #detailpicture {
+	max-height:250px;
+	max-width:400px;
+}
+
+
+
+
+
+
+div.carPreview div.carcontent div.contentBlock {
+	margin-bottom:0.8em;
+	text-align: justify;
+}
+
+div.carPreview div.carcontent div.contentBlock h3 {
+	font-weight:bold;
+	font-size:1.1em;
+	margin-bottom:0.2em;
+}
+
+div.carPreview div.carcontent div.contentBlock h4 {
+	font-weight:bold;
+	font-size:1em;
+	margin-bottom:0.1em;
+}
+
+div.carPreview div.carcontent div.shortNumbers {
+	padding-bottom:15px;
+}
+
+div.carPreview div.carcontent div.shortNumbers span.legend {
+	float:left;
+	display:block;
+	width:18em;
+}
+
+div.carPreview div.carcontent div.shortNumbers span.value {
+	font-weight:bold;
+}
+
+div.carPreview div.carcontent span.small {
+	font-size:0.7em;
+}
+
+
+
+
+
+div.carPreview div.carcontent div.contact {
+	background-color: #BEC4D2;
+	border:1px solid #536BB5;
+	width:30em;
+	padding:0.2em;
+}
+div.carPreview div.carcontent div.contact input {
+	height:1.3em;
+}
+
+div.carPreview div.carcontent div.contact select {
+	height:1.5em;
+}
+
+div.carPreview div.carcontent div.contact div.tel {
+	padding:0.2em 0em;
+}
+
+div.carPreview div.carcontent div.contact  fieldset.adress label {
+	vertical-align:top;
+	margin-right:1.5em;
+}
+
+
+div.carPreview div.carcontent div.contact div.tel div.col1 input {
+	width:5em;
+}
+
+div.carPreview div.carcontent div.contact div.tel div.col2 input,
+div.carPreview div.carcontent div.contact div.tel div.col2 select {
+	width:12em;
+}
+
+div.carPreview div.carcontent div.contact div.tel div.col {
+	float:left;
+}
+
+div.carPreview div.carcontent div.contact div.tel div.col label,
+div.carPreview div.carcontent div.contact div.msgrow label {
+	display:block;
+}
+
+div.carPreview div.carcontent div.contact div.row label {
+	float:left;
+	display:block;
+	width:17.2em;
+}
+
+div.carPreview div.carcontent div.contact div.row {
+	padding:0.2em 0em;
+}
+
+div.carPreview div.carcontent div.contact div.row input {
+	width:12em;
+}
+
+div.carPreview div.carcontent div.contact div.msgrow textarea {
+	width:29.4em;
+	height:10em;
+}
+
+div.carPreview div.carcontent div.contact div.submit input {
+	height: auto;
+	vertical-align:middle;
+	width:45%;
+}
+
+div.carPreview div.carcontent div.contact div.submit {
+	text-align:center;
+}
+
+
+
+
+
+
+/** Allgemein **/
+#tools a.print{
+	background: url("../images/print.gif") no-repeat 0 0;
+	height:20px;
+	padding-left:22px;
+}
+
+#tools a:hover {
+	background-position: 0 -20px;
+}
+
+
+
+
+/** Ergebnissliste **/
+div.searchListContainer {
+	padding:2em;
+}
+div.searchListContainer h2 {
+	font-size:1.6em;
+}
+
+table.searchList {
+	width:100%;
+}
+
+table.searchList tbody td {
+	vertical-align:top;
+}
+
+table.searchList thead th {
+	font-weight:bold;
+	background-color:#536BB5;
+	color:#ffffff;
+}
+
+table.searchList tbody td.pic {
+	padding:2px;
+	width:72px;
+}
+
+table.searchList tbody tr,
+table.searchList tbody tr td {
+	min-height:45px;
+}
+
+table.searchList tbody td.km {
+	width:6.5em;
+}
+
+table.searchList tbody td.price {
+	width:11em;
+}
+
+table.searchList tbody td.ez {
+	width:6em;
+}
+
+table.searchList tbody td.km,
+table.searchList tbody td.price,
+table.searchList thead th.price {
+	text-align:right;
+}
+
+table.searchList thead th.ez,
+table.searchList tbody td.ez,
+table.searchList thead th.km,
+table.searchList thead th.result {
+	text-align:center;
+}
+
+table.searchList tbody td {
+	background-color:#D9E0F0;
+	border-bottom:0.3em solid #ffffff;
+	border-left:0.1em solid #ffffff;
+}
+
+table.searchList tfoot td {
+	background-color:#BEC4D2;
+}
+
+table.searchList tbody td.result h4 {
+	font-weight:bold;
+}
+
+table.searchList tbody td.result h4 a {
+	color:#536BB5;
+	text-decoration:none;
+}
+
+
+
+
+
+
+
+
+/** suche **/
+div.SearchForm {
+	padding:2em;
+}
+
+div.SearchForm h2 {
+	font-size:1.4em;
+	font-weight:bold;
+}
+
+div.SearchForm label,
+div.SearchForm input,
+div.SearchForm select,
+div.SearchForm textarea {
+	display: block;
+	width: 220px;
+	float: left;
+	margin-bottom: 10px;
+}
+
+div.SearchForm input, 
+div.SearchForm select, 
+div.SearchForm textarea {
+	border: 0px;
+}
+
+div.SearchForm input:active,
+div.SearchForm select:active,
+div.SearchForm textarea:active,
+div.SearchForm input:hover,
+div.SearchForm select:hover,
+div.SearchForm textarea:hover,
+div.SearchForm input:focus,
+div.SearchForm select:focus,
+div.SearchForm textarea:focus {
+	background-color: #BEC4D2;
+}
+
+div.SearchForm input.half,
+div.SearchForm select.half,
+div.SearchForm textarea.half {
+	width: 105px;
+	margin-right: 10px;
+}
+
+div.SearchForm input.half_outer,
+div.SearchForm select.half_outer,
+div.SearchForm textarea.half_outer {
+	width: 105px;
+}
+
+div.SearchForm input.quarter,
+div.SearchForm select.quarter,
+div.SearchForm textarea.quarter {
+	width: 50px;
+	margin-right: 5px;
+}
+
+div.SearchForm input.quarter_outer,
+div.SearchForm select.quarter_outer,
+div.SearchForm textarea.quarter_outer {
+	width: 50px;
+}
+
+div.SearchForm input.chbox {
+	width: 20px;
+}
+
+div.SearchForm label {
+	text-align: right;
+	width: 150px;
+	padding-right: 10px;
+}
+
+div.SearchForm fieldset.accs label {
+	text-align: left;
+	width: 200px;
+	padding-right: 10px;
+}
+
+div.SearchForm fieldset.accs div.title {
+	float:left;
+	width: 220px;
+	padding-right: 10px;
+	font-weight:bold;
+}
+
+div.SearchForm legend {
+	display: block;
+	background-color: #536BB5;
+	color:#FFFFFF;
+	font-weight: bold;
+	padding: 2px;
+}
+
+div.SearchForm fieldset {
+	background-color: #D9E0F0;
+	margin-bottom: 10px;
+	border: 0px;
+}
+
+div.SearchForm fieldset hr {
+	border:1px solid #FFFFFF;
+}
+
+div.SearchForm br {
+	clear: left;
+}
+
+div.SearchForm input.submit {
+	background-color: #5DD429;
+	float: right;
+}
+
+
+
+
+
+
+
+
+

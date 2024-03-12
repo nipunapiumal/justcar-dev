@@ -1,0 +1,72 @@
+/*-----------------------------------------------------------
+	* Template Name    : Furious - Car Listing HTML Template
+	* Author           : KreativDev
+	* File Description : This file contains the styling for the actual template, this
+						is the file you need to edit to change the look of the
+						template.
+*------------------------------------------------------------
+
+**	This files table contents are outlined below >>>>>
+
+*******************************************
+*******************************************
+	** - Variables CSS
+	** - Reset CSS
+	** - Typography CSS
+	** - Utilities CSS
+	** - Animation CSS
+	** - Color CSS
+	** - Button CSS
+	** - Form CSS
+	** - Lazyload CSS
+	** - Preloader CSS
+	** - Swiper Slider CSS
+	** - Nav Tabs CSS
+	** - Nice Select CSS
+	** - Go top CSS
+	** - Title CSS
+	** - Social Link CSS
+	** - Ratings CSS
+	** - Header CSS
+	** - Hero Banner CSS
+	** - About CSS
+	** - Category CSS
+	** - Product CSS
+	** - Testimonial CSS
+	** - Blog CSS
+	** - Footer CSS
+	** - Sidebar Widget CSS
+	** - Page-title CSS
+	** - Pagination CSS
+	** - Car Details CSS
+	** - Shop CSS
+	** - Shop Single CSS
+	** - Shopping CSS
+	** - Authentication CSS
+	** - Blog Single CSS
+	** - Faq CSS
+	** - Contact CSS
+	** - Terms & Conditions CSS
+	** - Coming Soon CSS
+	** - Error CSS
+*/
+
+/* Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Roboto:wght@400;500&display=swap');
+
+// scss-import-stack
+// Base
+@import "base/base";
+// Layout
+@import "layout/header";
+@import "layout/hero-banner";
+@import "layout/category";
+@import "layout/product";
+@import "layout/footer";
+@import "layout/banner";
+@import "layout/about";
+@import "layout/choose";
+@import "layout/testimonial";
+@import "layout/blog";
+@import "layout/steps";
+@import "layout/inner-pages";

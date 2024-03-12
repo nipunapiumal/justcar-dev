@@ -1,0 +1,164 @@
+/* -----------------------------------------
+    Category CSS
+----------------------------------------- */
+.category-area {
+    position: relative;
+    overflow: hidden
+}
+.category-item {
+    @include transition(all, .4s, ease-out);
+
+    .category-img{
+        position: relative;
+        overflow: hidden;
+        @include transition(transform, .4s, ease-out);
+    }
+}
+.category-1{
+    .category-item{
+        .category-img{
+            &::before {
+                position: absolute;
+                content: '';
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                height: calc(100% / 1.2 - 15px);
+                background: transparent;
+                border: 3px solid var(--color-primary);
+                z-index: -2;
+                transform: translate3d(-15px, 14px, 0);
+                @include transition(all, .4s, ease-out);
+            }
+            &::after {
+                position: absolute;
+                content: '';
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                height: calc(100% / 1.2);
+                background: var(--bg-light);
+                z-index: -1;
+                @include transition(all, .4s, ease-out);
+            }
+            img {
+                @include transition(all, .3s, ease-out);
+            }
+        }
+        &:hover {
+            .category-img{
+                &::before {
+                    transform: none;
+                }
+                &::after {
+                    height: calc(100% / 1.2 - 15px);
+                    width: calc(100% - 15px);
+                    transform: translateY(15px);
+                }
+                img {
+                    transform: translateX(15px) scale(1.05)
+                }
+            }
+        }
+    }
+}
+
+.category-2{
+    .content-title{
+        *{
+            color: var(--color-white);
+        }
+
+        p{
+            color: var(--color-light);
+        }
+    }
+    .category-item{
+        background-color: var(--color-white);
+        margin-inline-start: 50px;
+        margin-bottom: 50px;
+        .category-header{
+            position: relative;
+            overflow: hidden;
+            text-align: center;
+            padding: 30px 30px ;
+            z-index: 1;
+            border-radius: 9px 9px 0 0;
+            background-color: var(--color-primary);
+
+            *{
+                color: var(--color-white);
+            }
+            .shape {
+                position: absolute;
+                left: 0;
+                right: 0;
+                bottom: -2px;
+                z-index: -1;
+            }
+        }
+        .category-img{
+            margin-inline-start: -50px;
+            bottom: -50px;
+            margin-top: -30px;
+        }
+    }
+}
+
+.category-3{
+    .category-item{
+        .category-img{
+            padding: 70px 30px 0;
+            border-radius: 15px 15px 0 0;
+            border: 1px solid transparent;
+            @include transition(all, .4s, ease-out);
+
+            img{
+                @include transition(transform, .4s, ease-out);
+            }
+
+            &::before {
+                position: absolute;
+                content: '';
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                height: calc(100% - 40px);
+                background-color: rgba($color: var(--color-primary-rgb), $alpha: .07);
+                z-index: -2;
+                @include transition(all, .4s, ease-out);
+            }
+            &::after {
+                position: absolute;
+                content: '';
+                left: 0;
+                right: 0;
+                bottom: 40px;
+                height: calc(100% - 80px);
+                width: calc(100% - 5px);
+                margin-inline: auto;
+                border-radius: 150px 150px 0 0;
+                background-color: rgba($color: var(--color-dark-rgb), $alpha: .13);
+                background: linear-gradient(180deg, #494949 -25.96%, rgba(254, 247, 243, 0) 100%);
+                z-index: -1;
+            }
+        }
+
+        
+        &:hover {
+            .category-img{
+                border-top-color: var(--color-primary);
+                img{
+                    transform: scale3d(1.1,1.1,1.1);
+                }
+
+                &::before {
+                    background-color: rgba($color: var(--color-primary-rgb), $alpha: .13);
+                }
+            }
+        }
+    }
+}

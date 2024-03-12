@@ -1,0 +1,15 @@
+{
+    "tabler-icons": {
+        "normal": "tabler_icons_normal_7e49b68c3c89804bce8472cf21b2ac08"
+    },
+    "feather": {
+        "normal": "feather_normal_2144299f8ea8a8e1564cd89cb2caed27"
+    },
+    "font awesome 5 brands": {
+        "normal": "font_awesome_5_brands_normal_e7d5b190e03cebb1fed3dcd19bb70170"
+    },
+    "font awesome 5 free": {
+        "normal": "font_awesome_5_free_normal_59437705101150953db53177ed3ca789",
+        "900": "\/Applications\/XAMPP\/xamppfiles\/htdocs\/storego\/storage\/pdf\/fonts\/font_awesome_5_free_900_8faa1a6fcd3e984d5be7cb03595b5858"
+    }
+}

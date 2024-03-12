@@ -1,0 +1,9 @@
+/* This stylesheet is universal across all theme designs. */
+.img-height-250{
+    height:250px !important;
+    object-fit: cover !important;
+}
+.img-height-407{
+    height:407px !important;
+    object-fit: cover !important;
+}

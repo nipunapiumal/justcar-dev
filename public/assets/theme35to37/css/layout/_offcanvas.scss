@@ -1,0 +1,64 @@
+/* -----------------------------------------
+	Offcanvas CSS
+----------------------------------------- */
+.offcanvas-nav{
+    height: 100%;
+    padding: 30px 15px 30px 30px;
+    background: var(--color-white);
+    box-shadow: 8px 8px 28px rgba(41, 41, 41, 0.05);
+    .nav-link {
+        position: relative;
+        padding: 6px 15px;
+        margin: 2px 0;
+        color: var(--color-dark);
+        font-weight: var(--font-semi-bold);
+        &:is(.active, :hover) {
+            color: var(--color-primary);
+            background: var(--color-light);
+        }
+        i{
+            font-size: 18px;
+            line-height: 1;
+            vertical-align: -2px;
+            margin-inline-end: 15px;
+        }
+    }
+    
+    .nav-item{
+        ul{
+            padding-top: 5px;
+            padding-bottom: 10px;
+            padding-inline-start: 20px;
+            list-style-type: none;
+            li:not(:last-child){
+                margin-bottom: 5px;
+            }
+            li:not(:last-child){
+                margin-bottom: 5px;
+            }
+        }
+        li{
+            // font-size: var(--font-sm);
+        }
+        &.open{
+            >a{
+                color: var(--color-primary);
+                &::after{
+                    opacity: 1;
+                }
+            }
+        }
+    }
+    .list-dropdown:not(.open){
+        .menu-collapse{
+            display: none;
+        }
+    }
+}
+
+@media (max-width: 1199.98px) {
+    #offcanvasMenu{
+        padding-top: 15px;
+        order: -1;
+    }
+}

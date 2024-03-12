@@ -1,0 +1,1 @@
+@include('storefront.theme16.view')

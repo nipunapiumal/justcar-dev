@@ -1,0 +1,62 @@
+/* -----------------------------------------
+    Banner CSS
+----------------------------------------- */
+.video-banner{
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+
+    .video-btn{
+        background-color: var(--color-white);
+        color: var(--color-primary);
+        &::before, &::after{
+            background-color: var(--color-white);
+        }
+    }
+}
+
+.banner-sm{
+    position: relative;
+    overflow: hidden;
+    .banner-content{
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        max-width: 50%;
+        padding: 0 20px;
+        display: flex;
+        align-items: center;
+    }
+
+    &.content-top{
+        .banner-content{
+            text-align: center;
+            align-items: flex-start;
+            padding: 30px 20px;
+            left: 0;
+            right: 0;
+        }
+    }
+    &.content-bottom{
+        .banner-content{
+            align-items: flex-end;
+            left: 0;
+        }
+    }
+    &.content-middle{
+        .banner-content{
+            align-items: center;
+            left: 0;
+        }
+    }
+
+    &.content-center{
+        .banner-content{
+            max-width: 100%;
+            text-align: center;
+            justify-content: center;
+            padding: 30px 10px;
+        }
+    }
+}

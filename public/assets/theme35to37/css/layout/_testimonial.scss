@@ -1,0 +1,167 @@
+/* -----------------------------------------
+    Testimonial CSS
+----------------------------------------- */
+.testimonial-area{
+    position: relative;
+    overflow: hidden;
+    .slider-item {
+        position: relative;
+        background: var(--color-white);
+        border: 1px solid var(--border-color);
+        transition: all .4s;
+        
+        .client{
+            @include make-flex(center, space-between);
+            flex-wrap: wrap;
+            padding: 25px 50px;
+            gap: 15px;
+            border-top: 1px dashed var(--border-color);
+
+            .ratings{
+                justify-content: start;
+                flex-direction: column;
+                .rate{
+                    margin-inline-start: -5px;
+                }
+                .ratings-total{
+                    margin-top: 10px;
+                }
+            }
+        }
+        .quote {
+            position: relative;
+            padding: 25px 50px;
+        }
+
+        .icon{
+            position: absolute;
+            top: 25px;
+            left: 50px;
+            font-size: 62px;
+            line-height: 1;
+            color: rgba($color: var(--color-primary-rgb), $alpha: .05);
+        }
+
+        p{
+            margin-bottom: 0;
+        }
+
+        .client-info{
+            h6 {
+                margin-bottom: 2px;
+            }
+    
+            .designation {
+                font-size: var(--font-sm);
+            }
+        }
+
+        .client-img {
+            max-width: 50px;
+            margin-inline-end: 16px;
+        }
+
+        .ratings{
+            font-size: var(--font-sm);
+            i{
+                color: var(--color-yellow);
+            }
+        }
+    }
+
+    .clients{
+        .client-img{
+            z-index: 1;
+            position: relative;
+        }
+        img{
+            max-width: 45px;
+            border-radius: 50%;
+
+            &:not(:first-child){
+                margin-inline-start: -16px;
+            }
+        }
+        span{
+            position: relative;
+            width: 45px;
+            height: 45px;
+            text-align: center;
+            line-height: 45px;
+            border-radius: 50%;
+            color: var(--color-dark);
+            margin-inline-start: -16px;
+            z-index: 2;
+            background: var(--bg-light);
+        }
+    }
+
+    &.testimonial-1{
+        .img-content{
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            img{
+                display: block;
+                margin-inline: auto;
+            }
+        }
+        .shape{
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            width: calc(100% / 2.2);
+            background: rgba($color: var(--color-primary-rgb), $alpha: .05);
+            clip-path: polygon(50% 0%, 100% 0%, 100% 100%, 0% 100%);
+            z-index: -1;
+        }
+        .slider-item {
+            .client{
+                border: 0;
+                border-bottom: 1px dashed var(--border-color);
+            }
+            .quote {
+                position: relative;
+                padding-block: 0;
+    
+                &::before{
+                    position: absolute;
+                    content: '';
+                    top: 50%;
+                    left: 0;
+                    right: 0;
+                    margin-inline-start: 20px;
+                    margin-inline-end: auto;
+                    width: 3px;
+                    height: 100%;
+                    background: var(--color-primary);
+                    transform: translateY(-50%);
+                }
+            }
+        }
+    }
+
+    &.testimonial-2{
+        .img-content{
+            position: absolute;
+            left: 0;
+            bottom: 0;
+        }
+    }
+
+    &.testimonial-3{
+        .img-content{
+            position: absolute;
+            left: 0;
+            bottom: 0;
+        }
+
+        .slider-item{
+            .quote,
+            .client{
+                padding-inline: 30px;
+            }
+        }
+    }
+}

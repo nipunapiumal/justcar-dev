@@ -1,0 +1,211 @@
+<?php $__env->startSection('page-title'); ?>
+    <?php echo e(__('Register')); ?>
+
+<?php $__env->stopSection(); ?>
+<?php $__env->startSection('content'); ?>
+    <div id="auth">
+        <aside>
+            <figure>
+                <a href="<?php echo e(route('dashboard')); ?>">
+                    <img src="<?php echo e(asset(Storage::url('uploads/logo/' . \App\Models\Utility::GetLogo()))); ?>"
+                        alt="<?php echo e(config('app.name', 'Storego')); ?>" width="150">
+                </a>
+                <div class="mt-4 text-center">
+                    <h4 class="f-w-600"><?php echo e(__('Register')); ?></h4>
+                    
+                </div>
+            </figure>
+           
+            <form method="POST" action="<?php echo e(route('register')); ?>" class="needs-validation mt-4" novalidate="">
+                <?php echo csrf_field(); ?>
+
+                
+                <div class="">
+                    <div class="form-group mb-3">
+                        <?php echo e(Form::hidden('username', null)); ?>
+
+                        <label class="form-label"><?php echo e(__('Name')); ?></label>
+                        <input id="name" type="text" class="form-control <?php $__errorArgs = ['name'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?> is-invalid <?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?>"
+                            name="name" value="<?php echo e(old('name')); ?>" required autocomplete="name" autofocus>
+                        <?php $__errorArgs = ['name'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?>
+                            <span class="error invalid-name text-danger" role="alert">
+                                <strong><?php echo e($message); ?></strong>
+                            </span>
+                        <?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?>
+                    </div>
+
+                    <div class="form-group mb-3">
+                        <label class="form-label"><?php echo e(__('Store Name')); ?></label>
+                        <input id="store_name" type="text" class="form-control <?php $__errorArgs = ['store_name'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?> is-invalid <?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?>"
+                            name="store_name" value="<?php echo e(old('store_name')); ?>" required autocomplete="store_name">
+                        <?php $__errorArgs = ['store_name'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?>
+                            <span class="error invalid-name text-danger" role="alert">
+                                <strong><?php echo e($message); ?></strong>
+                            </span>
+                        <?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?>
+                    </div>
+
+
+                    <div class="form-group mb-3">
+                        <label class="form-label"><?php echo e(__('Email')); ?></label>
+                        <input id="email" type="email" class="form-control  <?php $__errorArgs = ['email'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?> is-invalid <?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?>"
+                            name="email" value="<?php echo e(old('email')); ?>" required>
+                        <?php $__errorArgs = ['email'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?>
+                            <span class="error invalid-email text-danger" role="alert">
+                                <strong><?php echo e($message); ?></strong>
+                            </span>
+                        <?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?>
+                    </div>
+
+
+                    <div class="form-group mb-3">
+                        <label class="form-label"><?php echo e(__('Password')); ?></label>
+                        <input id="password" type="password" class="form-control  <?php $__errorArgs = ['password'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?> is-invalid <?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?>"
+                            name="password" required autocomplete="new-password">
+                        <?php $__errorArgs = ['password'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?>
+                            <span class="error invalid-password text-danger" role="alert">
+                                <strong><?php echo e($message); ?></strong>
+                            </span>
+                        <?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?>
+                    </div>
+
+
+                    <div class="form-group">
+                        <label class="form-label"><?php echo e(__('Confirm password')); ?></label>
+                        <input id="password-confirm" type="password"
+                            class="form-control <?php $__errorArgs = ['password_confirmation'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?> is-invalid <?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?>"
+                            name="password_confirmation" required autocomplete="new-password">
+                        <?php $__errorArgs = ['password_confirmation'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?>
+                            <span class="error invalid-password_confirmation text-danger" role="alert">
+                                <strong><?php echo e($message); ?></strong>
+                            </span>
+                        <?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?>
+                    </div>
+
+                    <?php if(env('RECAPTCHA_MODULE') == 'yes'): ?>
+                        <div class="form-group col-lg-12 col-md-12 mt-3">
+                            <?php echo NoCaptcha::display(); ?>
+
+                            <?php $__errorArgs = ['g-recaptcha-response'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?>
+                                <span class="error small text-danger" role="alert">
+                                    <strong><?php echo e($message); ?></strong>
+                                </span>
+                            <?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?>
+                        </div>
+                    <?php endif; ?>
+
+                    <div class="mt-2">
+                        <p>
+                            <?php echo e(__('By using the system, you accept the')); ?>
+
+                            <a href="<?php echo e(route('privacy')); ?>" class="text-primary"> <?php echo e(__('Privacy Policy')); ?> </a>
+                            and
+                            <a href="<?php echo e(route('terms')); ?>" class="text-primary"> <?php echo e(__('Term & condition')); ?>.
+                            </a>
+                        </p>
+                    </div>
+
+                    <div class="d-grid">
+                        <button class="btn btn-primary btn-block mt-2" type="submit"><?php echo e(__('Register')); ?></button>
+                    </div>
+
+                    <p class="mb-2 my-4 text-center"><?php echo e(__('Already have an account?')); ?> <a
+                            href="<?php echo e(route('login', $lang)); ?>" class="f-w-400 text-primary"><?php echo e(__('Login')); ?></a></p>
+
+            </form>
+            <div class="copy">
+                &copy;
+                <?php echo e(Utility::getValByName('footer_text') ? Utility::getValByName('footer_text') : config('app.name', 'WorkGo')); ?>
+
+                <?php echo e(date('Y')); ?>
+
+            </div>
+
+        </aside>
+    </div>
+<?php $__env->stopSection(); ?>
+<?php $__env->startPush('custom-scripts'); ?>
+    <?php if(env('RECAPTCHA_MODULE') == 'yes'): ?>
+        <?php echo NoCaptcha::renderJs(); ?>
+
+    <?php endif; ?>
+<?php $__env->stopPush(); ?>
+
+<?php echo $__env->make('layouts.authv2', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH /Users/optimaz_id/Sites/justcar/resources/views/auth/register.blade.php ENDPATH**/ ?>

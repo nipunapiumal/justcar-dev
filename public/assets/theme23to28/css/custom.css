@@ -1,0 +1,121 @@
+.bg-whatsapp {
+    background-color: #4FCE5D;
+}
+
+.bg-github {
+    background-color: #333333;
+}
+
+.bg-instagram {
+    background-color: #e1306c;
+}
+
+.bg-youtube {
+    background-color: #de463b;
+}
+
+.bg-whatsapp,
+.bg-github,
+.bg-instagram,
+.bg-youtube {
+    color: white;
+}
+
+.bg-whatsapp:hover,
+.bg-github:hover,
+.bg-instagram:hover,
+.bg-youtube:hover {
+    opacity: 0.9;
+}
+
+
+.locale-settings-package .modal-theme .item-row:not(:last-child) {
+    padding-bottom: 10px;
+}
+
+.locale-settings-package .selection-list .item-row {
+    background: none;
+    border: none;
+    color: #62646a;
+    text-decoration: none;
+    width: 100%;
+}
+
+.locale-settings-package .modal-theme .item-row .item-row-content.selected {
+    padding: 10px 32px;
+}
+
+.locale-settings-package .selection-list .item-row .item-row-content {
+    text-align: left;
+}
+
+.locale-settings-package .modal-theme .item-row .selected-icon {
+    -webkit-box-ordinal-group: 1;
+    -ms-flex-order: 0;
+    margin-right: 14px;
+    -webkit-order: 0;
+    order: 0;
+}
+
+.locale-settings-package .modal-theme .item-row .item-row-content {
+    padding: 10px 60px;
+}
+
+.locale-settings-package .modal-title,
+.locale-settings-package .btn-close {
+    padding: 0 32px;
+}
+
+.car-box-3 .facilities-list li i,
+.car-box .facilities-list li i {
+    /* font awesome icons are not showing if you set and font-weight */
+    font-weight: bold;
+}
+
+
+.latest-offers-box .big-img {
+    height: 515px;
+}
+
+@media only screen and (max-width: 992px) {
+    .latest-offers-box .big-img {
+        height: 250px;
+    }
+}
+
+.heading-car-3 .ratings-2 i {
+    color: #e6e6e6;
+}
+
+.content-area-20 {
+    margin-top: 100px;
+}
+
+/** Main header 3 area start **/
+#main-header-7 {
+    z-index: 999;
+    top: 0;
+    background-color: transparent;
+}
+
+#main-header-7 .navbar-expand-lg .navbar-nav .nav-link {
+    color: #515151;
+}
+
+@media (max-width: 992px) {
+    .content-area-20 {
+        margin-top: 80px;
+    }
+    .content-area-21 {
+        margin-top: 80px;
+    }
+}
+
+@media (max-width: 768px) {
+    .content-area-20 {
+        margin-top: 60px;
+    }
+    .content-area-21 {
+        margin-top: 60px;
+    }
+}

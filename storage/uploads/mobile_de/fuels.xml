@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<reference:reference xmlns:seller="http://services.mobile.de/schema/seller"
+    xmlns:ad="http://services.mobile.de/schema/ad"
+    xmlns:financing="http://services.mobile.de/schema/common/financing-1.0"
+    xmlns:reference="http://services.mobile.de/schema/reference"
+    xmlns:resource="http://services.mobile.de/schema/resource">
+    <reference:item key="PETROL" url="https://services.mobile.de/refdata/fuels/PETROL">
+        <resource:local-description xml-lang="en">Petrol</resource:local-description>
+    </reference:item>
+    <reference:item key="DIESEL" url="https://services.mobile.de/refdata/fuels/DIESEL">
+        <resource:local-description xml-lang="en">Diesel</resource:local-description>
+    </reference:item>
+    <reference:item key="LPG" url="https://services.mobile.de/refdata/fuels/LPG">
+        <resource:local-description xml-lang="en">LPG</resource:local-description>
+    </reference:item>
+    <reference:item key="CNG" url="https://services.mobile.de/refdata/fuels/CNG">
+        <resource:local-description xml-lang="en">Natural Gas</resource:local-description>
+    </reference:item>
+    <reference:item key="ELECTRICITY" url="https://services.mobile.de/refdata/fuels/ELECTRICITY">
+        <resource:local-description xml-lang="en">Electric</resource:local-description>
+    </reference:item>
+    <reference:item key="HYBRID" url="https://services.mobile.de/refdata/fuels/HYBRID">
+        <resource:local-description xml-lang="en">Hybrid (petrol/electric)</resource:local-description>
+    </reference:item>
+    <reference:item key="HYDROGENIUM" url="https://services.mobile.de/refdata/fuels/HYDROGENIUM">
+        <resource:local-description xml-lang="en">Hydrogen</resource:local-description>
+    </reference:item>
+    <reference:item key="ETHANOL" url="https://services.mobile.de/refdata/fuels/ETHANOL">
+        <resource:local-description xml-lang="en">Ethanol (FFV, E85, etc.)</resource:local-description>
+    </reference:item>
+    <reference:item key="HYBRID_DIESEL" url="https://services.mobile.de/refdata/fuels/HYBRID_DIESEL">
+        <resource:local-description xml-lang="en">Hybrid (diesel/electric)</resource:local-description>
+    </reference:item>
+    <reference:item key="OTHER" url="https://services.mobile.de/refdata/fuels/OTHER">
+        <resource:local-description xml-lang="en">Other</resource:local-description>
+    </reference:item>
+</reference:reference>

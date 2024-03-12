@@ -1,0 +1,221 @@
+/* -----------------------------------------
+    Button CSS
+----------------------------------------- */
+button, .btn {
+    cursor: pointer;
+	border: none;
+	background: inherit;
+	&:focus,
+	&:active{
+		outline: none;
+		box-shadow: none;
+	}
+	&:hover{
+		outline: none;
+	}
+}
+
+.btn{
+	position: relative;
+	font-size: 16px;
+	font-weight: 700;
+    border-radius: 0;
+	letter-spacing: 0.05em;
+	font-weight: var(--font-medium);
+    @include transition(all, .3s, ease-out);
+}
+
+.icon-start{
+	i{
+		margin-inline-end: 5px;
+	}
+}
+
+.icon-end{
+	i{
+		margin-inline-start: 5px;
+	}
+}
+
+.btn-lg{
+    padding: 15px 34px;
+}
+
+.btn-md{
+	padding: 10px 24px;
+	font-size: var(--font-sm);
+}
+
+.btn-sm{
+	padding: 6px 14px;
+	font-size: var(--font-xsm);
+}
+
+.btn-primary {
+	color: var(--color-white);
+	border: 1px solid var(--color-primary);
+	background-color: var(--color-primary);
+	@include transition(background, .3s, ease-out);
+	box-shadow: 0px 10px 30px rgba($color: var(--color-primary-rgb), $alpha: 0.14);
+	z-index: 1;
+
+	&:hover{
+		color: var(--color-primary);
+		background-color: var(--color-white);
+		border-color: var(--color-primary);
+	}
+
+	&.fancy{
+		margin-top: 6px;
+		margin-inline-start: 6px;
+		transform: translate(-6px, -6px);
+		background: var(--color-blue);
+		box-shadow: unset;
+		@include transition(all, .3s, ease-out);
+		
+		&::before{
+			position: absolute;
+			content: '';
+			bottom: -6px;
+			left: 6px;
+			width: 100%;
+			height: calc(100% / 1.5);
+			background: var(--color-dark);
+			@include transition(all, .3s, ease-out);
+			z-index: -2;
+		}
+		&::after{
+			position: absolute;
+			content: '';
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background: var(--color-primary);
+			@include transition(all, .3s, ease-out);
+			z-index: -1;
+		}
+	
+		&:hover{
+			color: var(--color-white);
+			transform: none;
+			&::before{
+				bottom: 6px;
+				height: 100%;
+				left: -6px;
+			}
+		}
+	}
+}
+
+.btn-danger {
+	border: 1px solid var(--color-red);
+	background-color: var(--color-red);
+	@include transition(background, .3s, ease-out);
+
+	&:hover{
+		border-color: var(--color-red);
+		background-color: var(--color-red);
+	}
+}
+
+.btn-outline{
+	border: 1px solid var(--color-primary);
+	color: var(--color-primary);
+
+	&:hover {
+		color: var(--color-primary);
+	}
+}
+
+.btn-remove{
+	padding: 0;
+	width: 35px;
+	height: 35px;
+	line-height: 35px;
+	padding: 0;
+	background: rgba($color: var(--color-primary-rgb), $alpha: .12) !important;
+	color: var(--color-primary) !important;
+}
+
+.btn-text{
+	line-height: 1;
+	text-decoration: underline;
+}
+
+.btn-icon{
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
+	width: 40px;
+	height: 40px;
+	text-align: center;
+	&:hover{
+		color: var(--color-white);
+		background-color: var(--color-primary);
+	}
+}
+
+.disabled{
+	border: none;
+	background: var(--color-dark) !important;
+	cursor:not-allowed!important;
+	pointer-events:initial!important
+}
+
+.btn-groups {
+	display: inline-flex;
+}
+
+/* Video Btn CSS */
+.video-btn {
+    position: relative;
+    width: 75px;
+    height: 75px;
+    padding: 0;
+    font-size: 22px;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    color: var(--color-white);
+    background: var(--color-primary);
+
+    &:hover{
+        background-color: var(--color-primary);
+        color: var(--color-white);
+    }
+
+    &::after {
+        content: "";
+        position: absolute;
+        left: -8px;
+        top: -8px;
+        width: calc(100% + 16px);
+        height: calc(100% + 16px);
+        animation: ripple 3s linear infinite;
+        background: var(--color-primary);
+        border-radius: 50%;
+        z-index: -2;
+    }
+
+    &::before {
+        content: "";
+        position: absolute;
+        left: -8px;
+        top: -8px;
+        width: calc(100% + 16px);
+        height: calc(100% + 16px);
+        animation: ripple 3s 1s linear infinite;
+        background: var(--color-primary);
+        border-radius: 50%;
+        z-index: -1;
+    }
+
+	&-sm{
+		width: 45px;
+		height: 45px;
+		font-size: var(--font-sm);
+	}
+}

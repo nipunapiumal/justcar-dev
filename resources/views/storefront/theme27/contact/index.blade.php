@@ -1,0 +1,1 @@
+@include('storefront.theme26.contact.index')

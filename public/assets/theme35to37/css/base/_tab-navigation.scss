@@ -1,0 +1,119 @@
+/* -----------------------------------------
+    Nav Tabs CSS
+----------------------------------------- */
+.tabs-navigation {
+    &::-webkit-scrollbar {
+        height: 5px;
+    }
+    .nav {
+        display: inline-flex;
+        border: none;
+        z-index: 1;
+        position: relative;
+        overflow: hidden;
+        li {
+            flex: 0 0 auto;
+        }
+        
+        .nav-link {
+            color: var(--color-medium);
+            font-weight: var(--font-medium);
+            border: 2px solid transparent;
+            margin: 0;
+            z-index: 999;
+            border-radius: 0;
+            cursor: pointer;
+
+            &:is(.active, :hover){
+                color: var(--color-white);
+                background: var(--color-primary);
+                border-radius: 0;
+            }
+        }
+
+        .nav-item{
+            &:not(:last-child, :first-child, .active) {
+                .nav-link{
+                    border-inline-start-color: var(--border-color);
+                }
+            }
+        }
+        
+        &[data-hover="fancyHover"] {
+            .nav-link:is(.active, :hover){
+                color: var(--color-primary);
+                background: transparent !important;
+            }
+            .nav-item{
+                &:is(.active) {
+                    .nav-link{
+                        color: var(--color-white);
+                        background: var(--color-primary) !important;
+                        &:is(:hover){
+                            background: transparent !important;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .target {
+        position: absolute;
+        background: var(--color-primary);
+        z-index: -1;
+        transform: translateX(-50%);
+        transition: all .3s ease-in-out;
+    }
+}
+
+.tabs-navigation.tabs-navigation-2 {
+    border-bottom: 3px solid var(--color-light);
+    .nav {
+        display: inline-flex;
+        overflow: hidden;
+        width: 100%;
+        
+        .nav-link {
+            border-radius: 0;
+            padding: 12px 30px;
+            border: none;
+            border-bottom: 2px solid transparent;
+            cursor: pointer;
+            transition: all .4s ease-out;
+            color: var(--color-dark);
+        }
+        .nav-link:is(.active, :hover){
+            color: var(--color-primary);
+            background: buttonface;
+            border-bottom-color: var(--primary-color);
+        }
+    }
+}
+
+.tabs-navigation.tabs-navigation-3 {
+    .nav {
+        .nav-link {
+            border: 1px solid transparent;
+        }
+
+        .nav-item{
+            &:not(:first-child) {
+                margin-inline-start: 10px;
+            }
+            &:not(.active) {
+                .nav-link{
+                    border-color: var(--border-color);
+                }
+            }
+        }
+    }
+}
+
+.tab-pane.fade {
+    transition: all 0.2s;
+    transform: translateY(1rem);
+}
+
+.tab-pane.fade.show {
+    transform: translateY(0rem);
+}
