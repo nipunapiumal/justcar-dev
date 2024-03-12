@@ -62,7 +62,7 @@
     <!-- Custom stylesheet -->
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/theme16to21/css/sidebar.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/theme16to21/css/style.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets/theme16to21/css/custom.css') }}">
+    <!-- <link rel="stylesheet" href="{{ asset('assets/theme16to21/css/custom.css') }}"> -->
     <link rel="stylesheet" type="text/css" id="style_sheet"
         href="{{ asset('assets/theme16to21/css/skins/yellow.css') }}">
 
@@ -142,22 +142,6 @@
                                 <i class="fa fa-phone"></i>
                                 {{ !empty($storethemesetting['top_bar_number']) ? $storethemesetting['top_bar_number'] : '2123081220' }}</a>
                         </div>
-                    </div>
-                    <div class="col-lg-6 col-md-4 col-sm-5">
-                        <ul class="top-social-media" style="float: right">
-                            @if (Utility::CustomerAuthCheck($store->slug) != true)
-                                <li>
-                                    <a class="sign-in" href="{{ route('customer.login', [$store->slug]) }}">
-                                        <i class="fa fa-sign-in"></i> {{ __('Log In') }}
-                                    </a>
-                                </li>
-                                <li>
-                                    <a class="sign-in" href="{{ route('store.usercreate', [$store->slug]) }}">
-                                        <i class="fa fa-user"></i> {{ __('Register') }}
-                                    </a>
-                                </li>
-                            @endif
-                       </ul>
                     </div>
                 </div>
             </div>
@@ -399,7 +383,7 @@
 
                         @endif
 
-                        <li class="nav-item dropdown active">
+                        <!-- <li class="nav-item dropdown active">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <i class='fa fa-language'></i>
@@ -430,7 +414,20 @@
                                     @endforeach
                                 </select>
                             </div>
-                        </li> --}}
+                        </li> --}} -->
+
+                        @if (Utility::CustomerAuthCheck($store->slug) != true)
+                                <li class="nav-item dropdown">
+                                    <a class="sign-in nav-link icon h-icon" href="{{ route('customer.login', [$store->slug]) }}">
+                                        <i class="fa fa-sign-in"></i> {{ __('Log In') }}
+                                    </a>
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a class="sign-in nav-link icon h-icon" href="{{ route('store.usercreate', [$store->slug]) }}">
+                                        <i class="fa fa-user"></i> {{ __('Register') }}
+                                    </a>
+                                </li>
+                        @endif
 
                         @if (Utility::CustomerAuthCheck($store->slug) == true)
                             <li class="nav-item dropdown">
