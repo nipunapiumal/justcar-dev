@@ -97,8 +97,8 @@ class JobBoardController extends Controller
         $jobBoards = $jobBoards->orderBy('id', 'DESC')->get();
         $storethemesetting = \App\Models\Utility::demoStoreThemeSetting($store->id, $store->theme_dir);
 
-        // return view('storefront.' . $store->theme_dir . '.job_board.index', compact('store', 'jobBoards','storethemesetting','page_slug_urls'));
-        return view('storefront.theme16.job_board.index', compact('store', 'jobBoards','storethemesetting','page_slug_urls'));
+        return view('storefront.' . $store->theme_dir . '.job_board.index', compact('store', 'jobBoards','storethemesetting','page_slug_urls'));
+        //return view('storefront.theme16.job_board.index', compact('store', 'jobBoards','storethemesetting','page_slug_urls'));
     }
 
     /**

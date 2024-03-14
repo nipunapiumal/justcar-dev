@@ -24,16 +24,16 @@
 <div class="contact-1 content-area-5 content-area-20">
     <div class="container">
         <!-- Main title -->
-        <div class="main-title text-center">
-            <h1 class="mb-10">{{ __('Contact Us') }}</h1>
-            <div class="title-border">
-                <div class="title-border-inner"></div>
-                <div class="title-border-inner"></div>
-                <div class="title-border-inner"></div>
-                <div class="title-border-inner"></div>
-                <div class="title-border-inner"></div>
+            <div class="main-title text-center">
+                <h1 class="mb-10">{{ __('Contact Us') }}</h1>
+                <div class="title-border">
+                    <div class="title-border-inner"></div>
+                    <div class="title-border-inner"></div>
+                    <div class="title-border-inner"></div>
+                    <div class="title-border-inner"></div>
+                    <div class="title-border-inner"></div>
+                </div>
             </div>
-        </div>
         <div class="bg-white">
             <div class="row g-0">
                 <div class="col-lg-7 col-md-12 col-sm-12 col-pad2">

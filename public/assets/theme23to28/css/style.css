@@ -417,6 +417,7 @@ Version:    1.1.0
 html,
 body {
     height: 100%;
+    background: #f9f9f9;
     /* font-family: 'Open Sans', sans-serif; */
 }
 
@@ -6503,6 +6504,10 @@ mark {
     padding: 100px 0 70px;
 }
 
+.content-area-jobs {
+    padding: 0 0 70px 0;
+}
+
 .content-area-2 {
     margin-bottom: 100px;
 }
@@ -6516,7 +6521,7 @@ mark {
 }
 
 .content-area-5 {
-    padding: 100px 0;
+    padding: 100px 0 50px 0;
 }
 
 .content-area-6 {
@@ -9290,6 +9295,117 @@ input[type="tel"] {
 .btn-info {
     color: #fff;
 }
+
+/** Service info 2 start **/
+
+.service-info-2 {
+    padding: 30px 20px;
+    margin-bottom: 30px;
+    background: #fff;
+    text-align: center;
+    -webkit-transition: all 0.5s;
+    transition: all 0.9s;
+    position: relative;
+    border-radius: 4px;
+    z-index: 1;
+}
+
+
+.service-info-2:hover {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.mt-50 {
+    margin-top: 50px;
+}
+
+.service-info-2:hover {
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+.service-info-2 .read-more {
+    font-weight: 500;
+    font-size: 16px;
+    background-color: var(--primary);
+    padding: 10px 20px;
+    color: #fff;
+}
+
+.service-info-2 h3 {
+    margin-bottom: 15px;
+    -webkit-transition: all 0.5s;
+    transition: all 0.5s;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.service-info-2 p {
+    margin-bottom: 20px;
+    -webkit-transition: all 0.5s;
+    transition: all 0.5s;
+    font-size: 14px;
+}
+
+.service-info-2 .icon {
+    margin: 0 auto 25px;
+    border-radius: 50%;
+    height: 100px;
+    width: 100px;
+    line-height: 100px;
+    top: 0;
+    font-size: 40px;
+    -webkit-transition: all 0.5s;
+    transition: all 0.5s;
+    color: var(--primary);
+    border: dashed 1px var(--primary);
+}
+
+.service-info-2:hover .icon {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+}
+
+.service-info-2::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 0;
+    border-radius: 4px;
+    -webkit-transition: all 0.5s;
+    transition: all 0.9s;
+    z-index: -1;
+    background-color: var(--primary);
+}
+
+.service-info-2:hover {
+    -webkit-transform: translateY(-5px);
+    transform: translateY(-5px);
+}
+
+.service-info-2:hover::before {
+    height: 100%;
+}
+
+.service-info-2:hover .icon {
+    border: solid 1px #fff;
+    background: #fff;
+}
+
+.service-info-2:hover p {
+    color: #fff;
+}
+
+.service-info-2:hover h3 a {
+    color: #fff;
+}
+
+.service-info-2:hover .read-more {
+    color: var(--primary);
+    background-color: #fff;
+}
+
 
 @media all and (min-width: 1200px) {
     .car-box-2 .footer {
