@@ -16,6 +16,23 @@
     $plan = \App\Models\Plan::find($creator->plan);
 
     $storethemesetting = \App\Models\Utility::demoStoreThemeSetting($store->id, $store->theme_dir);
+    $two_tone_none = '';
+    $two_tone_done = '';
+
+    //echo Request::segment(2);
+    if ($store->slug != Request::segment(2) && !Request::segment(3)):
+            $two_tone_none = 'two-tone-none';
+            //echo 'sajdndsajkfdjfbsbfjadbfbdsbfsdfsfnssdnandnasnasdasfdfsajdndsajkfdjfbsbfjadbfbdsbfsdfsfnssdnandnasnasdasfdf-if';
+        elseif (Request::segment(3) == 'cart' || Request::segment(3) == 'useraddress' || Request::segment(3) == 'userpayment' || Request::segment(3) == 'wishlist'):
+            $two_tone_none = 'two-tone-none';
+            //echo 'sajdndsajkfdjfbsbfjadbfbdsbfsdfsfnssdnandnasnasdasfdfsajdndsajkfdjfbsbfjadbfbdsbfsdfsfnssdnandnasnasdasfdf-elseif';
+        elseif (Request::segment(1) == 'store-blog' || Request::segment(3) == 'blog'):
+            $two_tone_none = 'two-tone-none';
+            //echo 'sajdndsajkfdjfbsbfjadbfbdsbfsdfsfnssdnandnasnasdasfdfsajdndsajkfdjfbsbfjadbfbdsbfsdfsfnssdnandnasnasdasfdf-elseif-blog';
+        else:
+            $two_tone_done = 'two-tone-done';
+            //echo 'sajdndsajkfdjfbsbfjadbfbdsbfsdfsfnssdnandnasnasdasfdfsajdndsajkfdjfbsbfjadbfbdsbfsdfsfnssdnandnasnasdasfdf-else';
+        endif;
 
 ?>
 
@@ -105,7 +122,7 @@
 
     <?php if(!$full_page): ?>
         <!-- Main header start -->
-        <header class="main-header sticky-header header-with-top" id="main-header-2">
+        <header class="main-header sticky-header <?php echo e($two_tone_none); ?> <?php echo e($two_tone_done); ?> header-with-top" id="main-header-2">
             <div class="container">
                 <nav class="navbar navbar-expand-lg navbar-light">
                     <a class="navbar-brand logos" href="<?php echo e(route('store.slug', $store->slug)); ?>">

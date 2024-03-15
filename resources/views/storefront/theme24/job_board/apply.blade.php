@@ -1,4 +1,4 @@
-@extends('storefront.layout.theme16to21')
+@extends('storefront.layout.theme24')
 @section('page-title')
     {{ $jobBoard->title }}
 @endsection

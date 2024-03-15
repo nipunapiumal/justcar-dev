@@ -28,8 +28,7 @@
             //echo 'sajdndsajkfdjfbsbfjadbfbdsbfsdfsfnssdnandnasnasdasfdfsajdndsajkfdjfbsbfjadbfbdsbfsdfsfnssdnandnasnasdasfdf-elseif';
         elseif (Request::segment(1) == 'store-blog' || Request::segment(3) == 'blog'):
             $two_tone_none = 'two-tone-none';
-        
-
+            //echo 'sajdndsajkfdjfbsbfjadbfbdsbfsdfsfnssdnandnasnasdasfdfsajdndsajkfdjfbsbfjadbfbdsbfsdfsfnssdnandnasnasdasfdf-elseif-blog';
         else:
             $two_tone_done = 'two-tone-done';
             //echo 'sajdndsajkfdjfbsbfjadbfbdsbfsdfsfnssdnandnasnasdasfdfsajdndsajkfdjfbsbfjadbfbdsbfsdfsfnssdnandnasnasdasfdf-else';
