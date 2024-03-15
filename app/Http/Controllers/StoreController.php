@@ -1145,8 +1145,8 @@ class StoreController extends Controller
         }
 
         //added theme6 coz all pages need same cart page in same design
-        // return view('storefront.' . $store->theme_dir . '.cart', compact('wishlist', 'products', 'total_item', 'store', 'page_slug_urls', 'blog'));
-        return view('storefront.theme6.cart', compact('wishlist', 'products', 'total_item', 'store', 'page_slug_urls', 'blog'));
+        return view('storefront.' . $store->theme_dir . '.cart', compact('wishlist', 'products', 'total_item', 'store', 'page_slug_urls', 'blog'));
+        //return view('storefront.theme6.cart', compact('wishlist', 'products', 'total_item', 'store', 'page_slug_urls', 'blog'));
     }
 
     public function userAddress($slug)

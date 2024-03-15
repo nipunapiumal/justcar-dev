@@ -42,8 +42,8 @@ class JobApplicantController extends Controller
             return abort('404', 'Page not found');
         }
 
-        // return view('storefront.' . $store->theme_dir . '.job_board.apply', compact('store', 'jobBoard'));
-        return view('storefront.theme16.job_board.apply', compact('store', 'jobBoard'));
+        return view('storefront.' . $store->theme_dir . '.job_board.apply', compact('store', 'jobBoard'));
+        //return view('storefront.theme16.job_board.apply', compact('store', 'jobBoard'));
     }
 
     /**

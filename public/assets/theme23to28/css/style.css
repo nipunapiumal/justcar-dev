@@ -6521,7 +6521,7 @@ mark {
 }
 
 .content-area-5 {
-    padding: 100px 0 50px 0;
+    padding: 100px 0 0px 0;
 }
 
 .content-area-6 {
@@ -7925,6 +7925,14 @@ mark {
 }
 
 /** Cart total box start **/
+.cart-section{
+    padding: 250px 0 120px 0;
+}
+.return-btn{
+    padding: 10px 20px;
+    background-color: var(--primary);
+    color: #fff;
+}
 .cart-total-box {
     padding: 30px;
     background: #fff;
@@ -9296,7 +9304,7 @@ input[type="tel"] {
     color: #fff;
 }
 
-/** Service info 2 start **/
+/** Job Service info 2 start **/
 
 .service-info-2 {
     padding: 30px 20px;
@@ -9404,6 +9412,12 @@ input[type="tel"] {
 .service-info-2:hover .read-more {
     color: var(--primary);
     background-color: #fff;
+}
+.content-area-apply-job{
+    margin: 0px 0px 100px 0px;
+}
+.content-area-apply-title{
+    margin: 100px 0px 0px 0px;
 }
 
 

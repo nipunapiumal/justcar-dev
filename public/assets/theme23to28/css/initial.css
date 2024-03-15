@@ -1073,7 +1073,7 @@
     }
 
     #main-header-2 .navbar-expand-lg .navbar-nav .nav-link:hover {
-        color: #fff!important;
+        color: #fff!;
     }
 
     #main-header-5 .navbar-expand-lg .navbar-nav .nav-link:hover {

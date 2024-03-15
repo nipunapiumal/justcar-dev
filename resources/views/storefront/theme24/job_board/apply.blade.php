@@ -1,4 +1,4 @@
-@extends('storefront.layout.theme23')
+@extends('storefront.layout.theme16to21')
 @section('page-title')
     {{ $jobBoard->title }}
 @endsection
@@ -6,7 +6,7 @@
 @endpush
 @section('content')
     <!-- Sub banner start -->
-    {{-- <div class="sub-banner">
+    <div class="sub-banner">
         <div class="container breadcrumb-area">
             <div class="breadcrumb-areas">
                 <h1>{{ $jobBoard->title }}</h1>
@@ -16,29 +16,11 @@
                 </ul>
             </div>
         </div>
-    </div> --}}
-    
-
-    <div class="contact-1 content-area-5 content-area-apply-title">
-        <div class="container">
-            <!-- Main title -->
-                <div class="main-title text-center">
-                    <h1 class="mb-10">{{ $jobBoard->title }}</h1>
-                    <div class="title-border">
-                        <div class="title-border-inner"></div>
-                        <div class="title-border-inner"></div>
-                        <div class="title-border-inner"></div>
-                        <div class="title-border-inner"></div>
-                        <div class="title-border-inner"></div>
-                    </div>
-                </div>
-        </div>
     </div>
-
     <!-- Sub Banner end -->
 
     <!-- Contact 1 start -->
-    <div class="contact-1 content-area-apply-job">
+    <div class="contact-1 content-area-20">
         <div class="container">
             {{-- <div class="row">
                 <div class="col-12"></div>
