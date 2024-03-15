@@ -126,4 +126,4 @@
     <script></script>
 <?php $__env->stopPush(); ?>
 
-<?php echo $__env->make('storefront.layout.theme16to21', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH /Users/nippasmac/Sites/justcar-dev/resources/views/storefront/theme25/job_board/apply.blade.php ENDPATH**/ ?>
+<?php echo $__env->make('storefront.layout.theme25', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH /Users/nippasmac/Sites/justcar-dev/resources/views/storefront/theme25/job_board/apply.blade.php ENDPATH**/ ?>

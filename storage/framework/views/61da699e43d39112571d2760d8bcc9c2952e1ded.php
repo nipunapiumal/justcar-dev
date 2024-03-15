@@ -1,0 +1,1 @@
+<?php echo $__env->make('storefront.theme23.view', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH /Users/nippasmac/Sites/justcar-dev/resources/views/storefront/theme26/view.blade.php ENDPATH**/ ?>

@@ -95,13 +95,18 @@
     color: #515151;
 }
 
-
 .sticky-header.two-tone-none .navbar-expand-lg .navbar-nav .nav-link:hover {
     color: var(--primary) !important;
 }
 
 /** Main header 3 area start **/
 #main-header-7 {
+    z-index: 99999;
+    top: 0;
+    background-color: #fff;
+}
+
+#main-header-26 {
     z-index: 999;
     top: 0;
     background-color: #fff;

@@ -21,7 +21,7 @@
 <!-- Sub Banner end -->
 
 <!-- Contact 1 start -->
-<div class="contact-1 content-area-5 content-area-20">
+<div class="contact-1 content-area content-area-21">
     <div class="container">
         <!-- Main title -->
             <div class="main-title text-center">
