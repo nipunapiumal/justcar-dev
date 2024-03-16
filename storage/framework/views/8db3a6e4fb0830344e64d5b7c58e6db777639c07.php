@@ -35,6 +35,7 @@
 
     <!-- Card Sidebar -->
     <?php echo $__env->make('storefront.layout.theme29to34.modal-set', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+    
 
     <div class="top-bar">
         <div class="company-logo">

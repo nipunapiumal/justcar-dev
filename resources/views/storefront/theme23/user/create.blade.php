@@ -1,4 +1,4 @@
-@extends('storefront.layout.theme16to21')
+@extends('storefront.layout.theme23')
 @section('page-title')
     {{ __('Register') }}
 @endsection
@@ -6,42 +6,29 @@
 @endpush
 @section('content')
     <!-- Contact section start -->
-    <div class="contact-section tab-box">
+    <div class="login-1">
         <div class="container-fluid">
-            <div class="row">
-                <div class="col-lg-7 col-md-12 bg-img">
-                    <div class="informeson">
-                        <div class="typing">
-                            <h1>{{ __('Customer') }} {{ __('Register') }}</h1>
-                        </div>
-                        <p>
-                            {{ __('By using the system, you accept the') }} <a href="" class="text-primary">
-                                {{ __('Privacy Policy') }} </a> {{ __('and') }} <a href="" class="text-primary">
-                                {{ __('System Regulations') }}. </a>
-                        </p>
-                        {{-- <div class="social-list">
-                        <div class="buttons">
-                            <a href="#" class="facebook-bg"><i class="fa fa-facebook"></i></a>
-                            <a href="#" class="twitter-bg"><i class="fa fa-twitter"></i></a>
-                            <a href="#" class="google-bg"><i class="fa fa-google"></i></a>
-                            <a href="#" class="dribbble-bg"><i class="fa fa-linkedin"></i></a>
-                        </div>
+            <div class="row login-box">
+                <div style="cursor: pointer" class="col-lg-6 d-flex justify-content-center align-items-center bg-dark d-none d-lg-flex" onclick="location.href='{{ route('store.slug', $store->slug) }}'">
+                    @if (!empty($store->logo))
+                        <img width="300" src="{{ asset(Storage::url('uploads/store_logo/' . $store->logo)) }}"
+                            alt="Image placeholder">
+                    @else
+                        <img width="300"class="logo1 img-fluid"
+                            src="{{ asset(Storage::url('uploads/store_logo/logo.png')) }}" alt="Image placeholder">
+                    @endif
+                    {{-- <div class="info clearfix">
+                        <h1>{{ __('Welcome to') }} <a
+                                href="{{ route('store.slug', $store->slug) }}" class="fw-bolder">{{ env('APP_NAME') }}</a></h1>
+                        <p>{{ __('By using the system, you accept the') }} <a href="">
+                                {{ __('Privacy Policy') }} </a> {{ __('and') }} <a href="">
+                                {{ __('System Regulations') }}</a></p>
                     </div> --}}
-                    </div>
                 </div>
-                <div class="col-lg-5 col-md-12 form-section">
+                <div class="col-lg-6 align-self-center pad-0 form-section">
                     <div class="login-inner-form">
-                        <div class="details">
-                            {{-- <a href="{{ route('store.slug', $store->slug) }}">
-                                @if (!empty($store->logo))
-                                    <img src="{{ asset(Storage::url('uploads/store_logo/' . $store->logo)) }}"
-                                        alt="Image placeholder">
-                                @else
-                                    <img src="{{ asset(Storage::url('uploads/store_logo/logo.png')) }}"
-                                        alt="Image placeholder">
-                                @endif
-                            </a> --}}
-
+                        <div class="form-inner">
+                            <h3 class="font-weight-bold">{{ __('Customer') }}  {{ __('Register') }}</h3>
                             <div class="mb-5"></div>
                             {!! Form::open(['route' => ['store.userstore', $slug], 'id' => 'contact-form'], ['method' => 'post']) !!}
                             <div class="form-group form-box">

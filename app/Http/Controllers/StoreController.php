@@ -4613,7 +4613,20 @@ class StoreController extends Controller
         return redirect()->back()->with('error', __('Store not available'));
         }*/
 
-        return view('storefront.' . $store->theme_dir . '.user.create', compact('blog', 'total_item', 'slug', 'store', 'page_slug_urls'));
+        $full_page = false;
+        switch ($store->theme_dir) {
+            case "theme23":
+            case "theme24":
+            case "theme25":
+            case "theme26":
+            case "theme27":
+            case "theme28":
+                // for specific conditions, such as having navigation or not
+                $full_page = true;
+                break;
+        }
+
+        return view('storefront.' . $store->theme_dir . '.user.create', compact('blog', 'total_item', 'slug', 'store', 'page_slug_urls','full_page'));
     }
 
     protected function userStore($slug, Request $request)

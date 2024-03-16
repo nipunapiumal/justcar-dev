@@ -36,3 +36,243 @@
 .locale-settings-package .btn-close {
     padding: 0 32px;
 }
+
+
+/** Cart total box start **/
+.cart-section{
+    padding: 100px 0 120px 0;
+}
+.return-btn{
+    padding: 10px 20px;
+    background-color: var(--primary);
+    color: #fff;
+}
+.return-btn:hover{
+    padding: 10px 20px;
+    background-color: #161616;
+    color: #fff;
+}
+.cart-total-box {
+    padding: 30px;
+    background: #fff;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.cart-total-box h5 {
+    font-weight: 600;
+    font-size: 18px;
+}
+
+.cart-total-box ul li {
+    line-height: 33px;
+    width: 100%;
+    font-size: 15px;
+}
+
+/** Shop checkout start **/
+.shop-checkout .form-control {
+    width: 100%;
+    padding: 10px 20px;
+    font-size: 16px;
+    background: transparent;
+    outline: 0;
+    height: 50px;
+    border-radius: 3px;
+    border: 1px solid #dbdbdb;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, .06);
+}
+
+.shop-checkout .form-group {
+    margin-bottom: 20px;
+}
+
+.payment-box {
+    margin: 0;
+    margin-left: 25px;
+}
+
+.form-check-input:focus {
+    box-shadow: none;
+}
+
+.payment-box .form-check-label {
+    font-size: 16px;
+    font-weight: 600;
+    color: #000000;
+    font-family: 'Raleway', sans-serif;
+    margin-bottom: 5px;
+}
+
+.payment-box .form-check-input {
+    position: absolute;
+    margin-top: 3px;
+    margin-left: -25px;
+}
+
+.shop-info .reviews-box {
+    padding: 10px 0;
+    border-top: solid 1px #e9e9e9;
+    border-bottom: solid 1px #e9e9e9;
+    margin-bottom: 20px;
+    box-shadow: none;
+}
+
+.shop-info .reviews-box ul li {
+    float: left;
+    font-size: 12px;
+    line-height: 25px;
+}
+
+.shop-info .btn-md {
+    padding: 13px 5px 11px 5px;
+    letter-spacing: 1px;
+}
+
+.shop-info .reviews-box ul li i {
+    margin-right: 1px;
+    color: orange;
+}
+
+.shop-info .reviews-box .reviews {
+    float: left;
+    font-size: 13px;
+    text-transform: uppercase;
+    margin-left: 5px;
+    line-height: 25px;
+}
+
+.shop-info .reviews-box .reviews a {
+    margin-right: 5px;
+    padding-right: 5px;
+    border-right: solid 1px #777;
+    color: #424040;
+}
+
+.shop-info .reviews-box .reviews a i {
+    margin-right: 5px;
+}
+
+.shop-info .reviews-box .reviews a:last-child {
+    border-right: solid 1px transparent;
+    padding: 0;
+    margin: 0;
+}
+
+.shop-info .price {
+    font-size: 18px;
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+
+.shop-info .price del {
+    margin-right: 15px;
+}
+
+.shop-info .horizontal ul li {
+    line-height: 30px;
+    width: 100%;
+    font-size: 15px;
+}
+
+.shop-info .horizontal ul li span {
+    width: 40%;
+    float: left;
+}
+
+.shop-info p {
+    line-height: 28px;
+    font-size: 16px;
+    font-weight: 400;
+    padding: 10px 0;
+}
+
+.shop-info .form-control {
+    width: 100%;
+    padding: 10px 20px;
+    font-size: 16px;
+    background: transparent;
+    outline: 0;
+    height: 45px;
+    border-radius: 3px;
+    border: 1px solid #dbdbdb;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, .06);
+}
+
+.shop-info .form-group {
+    margin-bottom: 20px;
+}
+
+/** SHOP table **/
+table {
+    width: 100%;
+}
+
+.shop-header {
+    margin-bottom: 30px;
+}
+
+.shop-table.cart .product-thumbnail,
+.shop-table.cart .product-name {
+    padding-left: 0;
+}
+
+.shop-table.cart .product-thumbnail,
+.shop-table.cart .product-name a {
+    text-transform: none;
+    font-size: 15px;
+    color: #424040;
+}
+
+.shop-table th {
+    padding: 15px 0;
+    border: none;
+}
+
+.shop-table.cart td,
+.shop-table.cart th {
+    vertical-align: middle;
+    padding-left: 10px;
+    padding-right: 10px;
+    text-transform: uppercase;
+    font-size: 15px;
+    color: #161616;
+}
+
+.shop-table.cart .t-600 {
+    font-weight: 600;
+    font-family: 'Raleway', sans-serif;
+}
+
+.shop-table.cart .product-remove {
+    padding-right: 0;
+}
+
+.shop-table td {
+    border-top: 1px solid #ddd;
+    padding: 20px 0;
+}
+
+.shop-table.cart .product-thumbnail img {
+    width: 100px;
+    padding: 2px;
+    background: #eaeaea;
+}
+
+.shop-table.cart .qty {
+    width: 60px;
+    padding-left: 0;
+    padding-right: 0;
+    text-align: center;
+}
+
+.shop-table input[type="text"],
+input[type="email"],
+textarea,
+input[type="password"],
+input[type="tel"] {
+    border: 1px solid #e8e8e8;
+    padding: 6px 15px;
+    color: #525252;
+    max-width: 100%;
+    outline: none;
+}

@@ -35,6 +35,7 @@
 
     <!-- Card Sidebar -->
     @include('storefront.layout.theme29to34.modal-set')
+    
 
     <div class="top-bar">
         <div class="company-logo">
