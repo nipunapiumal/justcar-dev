@@ -31,11 +31,10 @@
             $style_2_inner = 'style-2-inner';
             //echo 'sajdndsajkfdjfbsbfjadbfbdsbfsdfsfnssdnandnasnasdasfdfsajdndsajkfdjfbsbfjadbfbdsbfsdfsfnssdnandnasnasdasfdf-if';
         elseif (Request::segment(3) == 'cart' || Request::segment(3) == 'useraddress' || Request::segment(3) == 'userpayment' || Request::segment(3) == 'wishlist'):
-            //$two_tone_none = 'two-tone-none';
             $top_bar_inner = 'top-bar-inner';
             $style_2_inner = 'style-2-inner';
             //echo 'sajdndsajkfdjfbsbfjadbfbdsbfsdfsfnssdnandnasnasdasfdfsajdndsajkfdjfbsbfjadbfbdsbfsdfsfnssdnandnasnasdasfdf-elseif';
-        elseif (Request::segment(1) == 'store-blog' || Request::segment(3) == 'blog' || Request::segment(3) == 'product'):
+        elseif (Request::segment(1) == 'store-blog' || Request::segment(3) == 'blog' || Request::segment(3) == 'product' || Request::segment(3) == 'apply'):
             $top_bar_inner = 'top-bar-inner';
             $style_2_inner = 'style-2-inner';
             //echo 'sajdndsajkfdjfbsbfjadbfbdsbfsdfsfnssdnandnasnasdasfdfsajdndsajkfdjfbsbfjadbfbdsbfsdfsfnssdnandnasnasdasfdf-elseif-blog';
