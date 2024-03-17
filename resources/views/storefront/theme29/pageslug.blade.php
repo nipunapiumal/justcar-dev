@@ -43,9 +43,8 @@
         <div class="row">
             <div class="col-lg-12">
                 <div class="welcome-wrap">
-                    <div class="section-title1 wow fadeInUp" data-wow-delay="200ms">
-                        {{-- <span>(Since-1994)</span> --}}
-                        <h2>{{ ucfirst($pageoption->name) }}</h2>
+                    <div class="one mb-50">
+                        <h1 class="heading-1">{{ ucfirst($pageoption->name) }}</h1>
                     </div>
                     <div class="welcome-content wow fadeInUp" data-wow-delay="300ms">
                         <p>

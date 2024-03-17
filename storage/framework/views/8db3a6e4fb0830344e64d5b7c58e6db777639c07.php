@@ -35,7 +35,6 @@
 
     <!-- Card Sidebar -->
     <?php echo $__env->make('storefront.layout.theme29to34.modal-set', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
-    
 
     <div class="top-bar">
         <div class="company-logo">
@@ -138,6 +137,25 @@
                     </li>
                 <?php endif; ?>
 
+
+                <li>
+                    <?php if(Utility::CustomerAuthCheck($store->slug) == false): ?>
+                        <a type="button" class="" data-bs-toggle="modal"
+                            data-bs-target="#logInModal01">
+                            <?php echo e(__('Log in')); ?>
+
+                        </a>
+                    <?php else: ?>
+                        <form id="customer-frm-logout" action="<?php echo e(route('customer.logout', $store->slug)); ?>"
+                            method="POST" class="d-none">
+                            <?php echo e(csrf_field()); ?>
+
+                        </form>
+                    <?php endif; ?>
+                </li>
+
+
+
                 <?php if(Utility::CustomerAuthCheck($store->slug) == true): ?>
                     <li class="menu-item-has-children">
                         <a class="drop-down" href="#">
@@ -191,22 +209,7 @@
                         </ul>
                     </li>
                 <?php endif; ?>
-                 <!-- Updated Login -->
-                    <?php if(Utility::CustomerAuthCheck($store->slug) != true): ?>
-                        <li class="dropdown">
-                            <a href="<?php echo e(route('customer.login', [$store->slug])); ?>" class="modal-btn header-cart-btn text-uppercase">
-                                <?php echo e(__('Log in')); ?>
 
-                            </a>
-                        </li>
-                        <li class="dropdown">
-                            <a href="<?php echo e(route('store.usercreate', [$store->slug])); ?>" class="modal-btn header-cart-btn text-uppercase">
-                                <?php echo e(__('Register')); ?>
-
-                            </a>
-                        </li>
-                    <?php endif; ?>
-                <!-- Updated Login End -->
             </ul>
             <div class="topbar-right d-lg-none d-block">
                 <a href="<?php echo e(route('store.cart', $store->slug)); ?>">
@@ -250,9 +253,8 @@
 
                     </form>
                 <?php endif; ?>
-                
-                
 
+                
 
             </div>
             <div class="hotline-area d-lg-none d-flex">
@@ -279,11 +281,12 @@
             </div>
         </div>
         <div class="nav-right d-flex jsutify-content-end align-items-center">
-            <!-- Button trigger modal -->
+            
+
             <div class="dropdown">
                 <a href="<?php echo e(route('store.cart', $store->slug)); ?>" class="modal-btn header-cart-btn text-uppercase"
                     type="button">
-                    <i class="bi bi-bag-check"></i> <?php echo e(__('Cart')); ?> <span class="shopping_count"
+                    <i class="bi bi-bag-check"></i> <?php echo e(__('Cart')); ?><span class="shopping_count"
                         id="shopping_count">(<?php echo e(!empty($total_item) ? $total_item : '0'); ?>)</span>
                 </a>
             </div>

@@ -23,16 +23,10 @@
     <div class="blog-body pt-100 pb-100">
         <div class="container">
             <!-- Main title -->
-            <div class="main-title text-center">
-                <h3 class="mb-50">{{ __('Gallery') }}</h3>
-                <div class="title-border">
-                    <div class="title-border-inner"></div>
-                    <div class="title-border-inner"></div>
-                    <div class="title-border-inner"></div>
-                    <div class="title-border-inner"></div>
-                    <div class="title-border-inner"></div>
-                </div>
+            <div class="one mb-50">
+                <h1 class="heading-1">{{ __('Gallery') }}</h1>
             </div>
+            
             <div class="row">
                 <div class="col-lg-10 col-md-12">
                     <div class="row">

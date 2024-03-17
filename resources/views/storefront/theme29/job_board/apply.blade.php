@@ -1,4 +1,4 @@
-@extends('storefront.layout.theme28')
+@extends('storefront.layout.theme29')
 @section('page-title')
     {{ $jobBoard->title }}
 @endsection
@@ -6,15 +6,19 @@
 @endpush
 @section('content')
     <!-- Sub banner start -->
-    <div class="sub-banner">
-        <div class="container breadcrumb-area">
-            <div class="breadcrumb-areas">
-                <h1>{{ $jobBoard->title }}</h1>
-                <ul class="breadcrumbs">
-                    <li><a href="{{ route('store.slug', $store->slug) }}">{{ __('Home') }}</a></li>
-                    <li class="active">{{ $jobBoard->title }}</li>
-                </ul>
-            </div>
+    <div class="contact-1 job-board-title">
+        <div class="container">
+            <!-- Main title -->
+                <div class="main-title text-center">
+                    <h2 class="mb-50"> {{ $jobBoard->title }}</h2>
+                    <div class="title-border">
+                        <div class="title-border-inner"></div>
+                        <div class="title-border-inner"></div>
+                        <div class="title-border-inner"></div>
+                        <div class="title-border-inner"></div>
+                        <div class="title-border-inner"></div>
+                    </div>
+                </div>
         </div>
     </div>
     <!-- Sub Banner end -->
@@ -27,48 +31,48 @@
 
             </div> --}}
 
-            <div class="best-used-car">
+            <div class="best-used-car pt-50">
                 @if ($jobBoard->job_context)
-                    <h3>{{ __('Job Context') }}</h3>
-                    <p>{!! nl2br($jobBoard->job_context) !!}</p>
+                    <h4>{{ __('Job Context') }}</h4>
+                    <p class="job-description mb-30">{!! nl2br($jobBoard->job_context) !!}</p>
                 @endif
                 @if ($jobBoard->job_responsibility)
-                    <h3>{{ __('Job Responsibility') }}</h3>
-                    <p>{!! nl2br($jobBoard->job_responsibility) !!}</p>
+                    <h4>{{ __('Job Responsibility') }}</h4>
+                    <p class="job-description mb-30">{!! nl2br($jobBoard->job_responsibility) !!}</p>
                 @endif
                 @if ($jobBoard->vacancy)
-                    <h3>{{ __('Vacancy') }}</h3>
-                    <p>{!! nl2br($jobBoard->vacancy) !!}</p>
+                    <h4>{{ __('Vacancy') }}</h4>
+                    <p class="job-description mb-30">{!! nl2br($jobBoard->vacancy) !!}</p>
                 @endif
                 @if ($jobBoard->educational_requirements)
-                    <h3>{{ __('Educational Requirements') }}</h3>
-                    <p>{!! nl2br($jobBoard->educational_requirements) !!}</p>
+                    <h4>{{ __('Educational Requirements') }}</h4>
+                    <p class="job-description mb-30">{!! nl2br($jobBoard->educational_requirements) !!}</p>
                 @endif
                 @if ($jobBoard->experience_requirements)
-                    <h3>{{ __('Experience Requirements') }}</h3>
-                    <p>{!! nl2br($jobBoard->experience_requirements) !!}</p>
+                    <h4>{{ __('Experience Requirements') }}</h4>
+                    <p class="job-description mb-30">{!! nl2br($jobBoard->experience_requirements) !!}</p>
                 @endif
                 @if ($jobBoard->additional_requirements)
-                    <h3>{{ __('Additional Requirements') }}</h3>
-                    <p>{!! nl2br($jobBoard->additional_requirements) !!}</p>
+                    <h4>{{ __('Additional Requirements') }}</h4>
+                    <p class="job-description mb-30">{!! nl2br($jobBoard->additional_requirements) !!}</p>
                 @endif
                 @if ($jobBoard->employment_status)
-                    <h3>{{ __('Employment Status') }}</h3>
-                    <p>{!! nl2br($jobBoard->employment_status) !!}</p>
+                    <h4>{{ __('Employment Status') }}</h4>
+                    <p class="job-description mb-30">{!! nl2br($jobBoard->employment_status) !!}</p>
                 @endif
                 @if ($jobBoard->compensation_other_benefits)
-                    <h3>{{ __('Compensation & Other Benefits') }}</h3>
-                    <p>{!! nl2br($jobBoard->compensation_other_benefits) !!}</p>
+                    <h4>{{ __('Compensation & Other Benefits') }}</h4>
+                    <p class="job-description mb-30">{!! nl2br($jobBoard->compensation_other_benefits) !!}</p>
                 @endif
                 @if ($jobBoard->salary)
-                    <h3>{{ __('Salary') }}</h3>
-                    <p>{!! nl2br($jobBoard->salary) !!}</p>
+                    <h4>{{ __('Salary') }}</h4>
+                    <p class="job-description mb-30">{!! nl2br($jobBoard->salary) !!}</p>
                 @endif
             </div>
 
 
         </div>
-        <div class="container">
+        <div class="container pt-100 pb-80 apply-form mb-50">
             {{-- <!-- Main title -->
         <div class="main-title text-center">
             <h1>Contact Us</h1>
@@ -76,9 +80,10 @@
         </div> --}}
             <div class="row g-0 contact-innner">
                 <div class="col-lg-12 col-md-12">
-                    <div class="contact-form" style="border-right: none">
-                        <h3 class="mb-20">{{ __('Apply To') . ' ' . $jobBoard->position . ' (' . $jobBoard->title . ')' }}
-                        </h3>
+                    <div class="contact-form" style="border-right: none; margin:0px 20px !important;">
+                        <div class="text-center">
+                        <h4 class="mb-20">{{ __('Apply To') . ' ' . $jobBoard->position . ' (' . $jobBoard->title . ')' }}
+                        </h4></div>
                         {{ Form::open(['url' => 'job-applicants', 'method' => 'post', 'enctype' => 'multipart/form-data', 'id' => 'contact-form']) }}
 
                         <div class="row">

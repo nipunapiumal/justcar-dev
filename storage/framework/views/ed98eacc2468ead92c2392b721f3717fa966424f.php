@@ -14,16 +14,9 @@
 <div class="contact-1 pt-100">
     <div class="container">
         <!-- Main title -->
-            <div class="main-title text-center">
-                <h3 class="mb-50"><?php echo e(__('Career With Us')); ?></h3>
-                <div class="title-border">
-                    <div class="title-border-inner"></div>
-                    <div class="title-border-inner"></div>
-                    <div class="title-border-inner"></div>
-                    <div class="title-border-inner"></div>
-                    <div class="title-border-inner"></div>
-                </div>
-            </div>
+        <div class="one mb-50">
+            <h1 class="heading-1"><?php echo e(__('Career With Us')); ?></h1>
+        </div>
     </div>
 </div>
 

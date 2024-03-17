@@ -276,3 +276,84 @@ input[type="tel"] {
     max-width: 100%;
     outline: none;
 }
+.job-board-title{
+    padding: 150px 0px 100px 0px;
+    background-color: #f5f5f5;
+}
+.job-description{
+    color: #a8a8a8;
+}
+.apply-form{
+    background-color: #09a0dc22;
+}
+.btn-5 {
+    border: 2px solid var(--primary);
+    color: var(--primary);
+    padding: 10px 20px;
+}
+.btn-5:hover{
+    background-color: var(--primary);
+    color: #fff;
+}
+
+
+/* === BASE HEADING === */ 
+
+.heading-1 {
+    position: relative;
+    padding: 0;
+    margin: 0;
+    font-weight: 400;
+    font-size: 40px;
+    color: #080808;
+    -webkit-transition: all 0.4s ease 0s;
+    -o-transition: all 0.4s ease 0s;
+    transition: all 0.4s ease 0s;
+  }
+
+  /* === HEADING STYLE #1 === */
+.one .heading-1 {
+    text-align: center;
+    text-transform: uppercase;
+    padding-bottom: 5px;
+  }
+  .one .heading-1:before {
+    width: 28px;
+    height: 5px;
+    display: block;
+    content: "";
+    position: absolute;
+    bottom: 3px;
+    left: 50%;
+    margin-left: -14px;
+    background-color: var(--primary);
+  }
+  .one .heading-1:after {
+    width: 100px;
+    height: 1px;
+    display: block;
+    content: "";
+    position: relative;
+    margin-top: 10px;
+    left: 50%;
+    margin-left: -50px;
+    background-color: var(--primary);
+  }
+  
+  .inner-title{
+    margin: 200px 0px 100px 0px;
+  }
+  .bi::before{
+    line-height: inherit !important;
+  }
+
+  /* Product page */
+  .swiper-wrapper-1{
+    position: relative;
+    width: 100%;
+    height: auto;
+    z-index: 1;
+    display: flex;
+    transition-property: transform;
+    box-sizing: content-box;
+  }

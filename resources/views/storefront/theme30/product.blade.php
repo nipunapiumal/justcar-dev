@@ -1,4 +1,4 @@
-@extends('storefront.layout.'.$store->theme_dir.'')
+@extends('storefront.layout.theme30')
 @section('page-title')
     {{ __('Home') }}
 @endsection

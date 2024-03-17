@@ -39,11 +39,11 @@
     <!-- Start Checkout section -->
     <div class="contact-page pt-100 mb-100">
         <div class="container">
+            <div class="one mb-50">
+                <h1 class="heading-1">{{ __('Contact Us') }}</h1>
+            </div>
             <div class="row g-4 mb-100">
                 <div class="col-lg-5">
-                    <div class="section-title mb-50">
-                        <h4>{{ __('Contact Us') }}</h4>
-                    </div>
                     <div class="single-contact mb-40">
                         <div class="title">
                             <h6>{{ __('Phone Support') }}</h6>

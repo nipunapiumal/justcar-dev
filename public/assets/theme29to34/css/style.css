@@ -522,7 +522,7 @@ p {
   font-family: var(--font-open-sans);
   font-weight: 600;
   font-size: 15px;
-  color: #13141A;
+  color: #fff;
   white-space: nowrap;
   padding: 10px 20px;
   display: inline-flex;
@@ -978,6 +978,27 @@ p {
   padding: 15px 11%;
   border-bottom: 1px solid #eee;
 }
+.top-bar-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+  padding: 15px 11%;
+  border-bottom: 1px solid #eee;
+  background-color: var(--primary);
+}
+header.style-2-inner {
+  width: 100%;
+  z-index: 2;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 11%;
+  transition: all 0.8s ease-out 0s;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+  background-color: var(--primary) !important;
+}
+
 @media (min-width: 1400px) and (max-width: 1599px) {
   .top-bar {
     padding: 15px 3%;
@@ -3184,6 +3205,7 @@ header.style-2 {
   border-bottom: 1px solid rgba(255, 255, 255, 0.15);
   background-color: transparent;
 }
+
 @media (min-width: 1400px) and (max-width: 1599px) {
   header.style-2 {
     padding: 0px 3%;
@@ -24506,3 +24528,149 @@ button {
 .range-wrapper2 .valus .min-value input::placeholder, .range-wrapper2 .valus .max-value input::placeholder {
   color: rgba(19, 20, 26, 0.5);
 }/*# sourceMappingURL=style.css.map */
+
+/** Contact 1 start **/
+.contact-1 form .form-control {
+  width: 100%;
+  padding: 10px 17px;
+  font-size: 15px;
+  outline: none;
+  color: #6c6c6c;
+  border-radius: 3px;
+  min-height: 50px;
+  font-weight: 400;
+  border: 1px solid #dbdbdb;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, .06);
+}
+
+.contact-1 .col-pad2 {
+  padding: 0;
+}
+
+.contact-1 .contact-details .ci-box i {
+  width: 65px;
+  font-size: 25px;
+  height: 65px;
+  line-height: 65px;
+  border-radius: 100%;
+  background: #fff;
+  color: #000;
+  text-align: center;
+}
+
+.contact-1 .contact-details .ci-box {
+  margin-bottom: 25px;
+  position: relative;
+}
+
+.contact-1 .contact-details .ci-box.mb-40 {
+  margin-bottom: 40px;
+}
+
+.contact-1 .detail {
+  margin: 5px 0 0 20px;
+}
+
+.contact-1 .contact-details {
+  background: #fff;
+  padding: 50px;
+  background: rgba(0, 0, 0, 0.04) url(../img/banner/img-6.png) top left repeat;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  position: relative;
+  z-index: 0;
+}
+
+.contact-1 .contact-details:before {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: #191fcb;
+  content: "";
+  z-index: -1;
+  opacity: 0.7;
+}
+
+
+.bg-white {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  background: #fff;
+}
+
+.contact-1 .contact-pad {
+  padding: 50px;
+}
+
+.contact-1 .col-pad2 {
+  border-right: none;
+}
+
+.contact-1 .form-group {
+  margin-bottom: 20px;
+}
+
+.contact-1 form textarea {
+  min-height: 240px !important;
+}
+
+.contact-1 .contact-details .ci-box h4 {
+  font-weight: 500;
+  font-size: 17px;
+  color: #fff;
+  margin: 0 0 5px;
+}
+
+.contact-1 h3 {
+  margin: 0 0 20px;
+  font-weight: 600;
+  font-size: 22px;
+}
+
+.contact-1 .social-list li {
+  display: inline-block;
+}
+
+.contact-1 .social-list li a {
+  margin-bottom: 2px;
+  color: #000;
+  width: 45px;
+  height: 45px;
+  line-height: 45px;
+  display: inline-block;
+  border-radius: 3px;
+  background: #fff;
+  text-align: center;
+}
+
+.contact-1 .social-list li a:hover {
+  color: #fff;
+}
+
+.contact-1 .social-list li a:hover {
+  color: #fff;
+}
+
+.contact-1 .contact-details .ci-box p {
+  font-size: 15px;
+  color: #e1e0e0;
+  margin-bottom: 0;
+}
+
+.contact-1 .contact-details .ci-box p a {
+  color: #e1e0e0;
+}
+
+.contact-1 .contact-details h3 {
+  color: #fff;
+}
+
+.contact-map {
+  height: 350px !important;
+}
+
+.contact-map-content .map-content {
+  width: 250px;
+}

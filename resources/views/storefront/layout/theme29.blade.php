@@ -35,7 +35,6 @@
 
     <!-- Card Sidebar -->
     @include('storefront.layout.theme29to34.modal-set')
-    
 
     <div class="top-bar">
         <div class="company-logo">
@@ -146,6 +145,23 @@
                     </li>
                 @endif
 
+
+                <li>
+                    @if (Utility::CustomerAuthCheck($store->slug) == false)
+                        <a type="button" class="" data-bs-toggle="modal"
+                            data-bs-target="#logInModal01">
+                            {{ __('Log in') }}
+                        </a>
+                    @else
+                        <form id="customer-frm-logout" action="{{ route('customer.logout', $store->slug) }}"
+                            method="POST" class="d-none">
+                            {{ csrf_field() }}
+                        </form>
+                    @endif
+                </li>
+
+
+
                 @if (Utility::CustomerAuthCheck($store->slug) == true)
                     <li class="menu-item-has-children">
                         <a class="drop-down" href="#">
@@ -192,20 +208,7 @@
                         </ul>
                     </li>
                 @endif
-                 <!-- Updated Login -->
-                    @if (Utility::CustomerAuthCheck($store->slug) != true)
-                        <li class="dropdown">
-                            <a href="{{ route('customer.login', [$store->slug]) }}" class="modal-btn header-cart-btn text-uppercase">
-                                {{ __('Log in') }}
-                            </a>
-                        </li>
-                        <li class="dropdown">
-                            <a href="{{ route('store.usercreate', [$store->slug]) }}" class="modal-btn header-cart-btn text-uppercase">
-                                {{ __('Register') }}
-                            </a>
-                        </li>
-                    @endif
-                <!-- Updated Login End -->
+
             </ul>
             <div class="topbar-right d-lg-none d-block">
                 <a href="{{ route('store.cart', $store->slug) }}">
@@ -246,9 +249,8 @@
                         {{ csrf_field() }}
                     </form>
                 @endif
-                
-                
 
+                
 
             </div>
             <div class="hotline-area d-lg-none d-flex">
@@ -275,11 +277,12 @@
             </div>
         </div>
         <div class="nav-right d-flex jsutify-content-end align-items-center">
-            <!-- Button trigger modal -->
+            
+
             <div class="dropdown">
                 <a href="{{ route('store.cart', $store->slug) }}" class="modal-btn header-cart-btn text-uppercase"
                     type="button">
-                    <i class="bi bi-bag-check"></i> {{ __('Cart') }} <span class="shopping_count"
+                    <i class="bi bi-bag-check"></i> {{ __('Cart') }}<span class="shopping_count"
                         id="shopping_count">({{ !empty($total_item) ? $total_item : '0' }})</span>
                 </a>
             </div>

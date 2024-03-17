@@ -22,6 +22,27 @@
     }
     $languages = \App\Models\Utility::languages($store->slug);
 
+    $top_bar_inner = '';
+    $style_2_inner = '';
+
+    //echo Request::segment(2);
+        if ($store->slug != Request::segment(2) && !Request::segment(3)):
+            $top_bar_inner = 'top-bar-inner';
+            $style_2_inner = 'style-2-inner';
+            //echo 'sajdndsajkfdjfbsbfjadbfbdsbfsdfsfnssdnandnasnasdasfdfsajdndsajkfdjfbsbfjadbfbdsbfsdfsfnssdnandnasnasdasfdf-if';
+        elseif (Request::segment(3) == 'cart' || Request::segment(3) == 'useraddress' || Request::segment(3) == 'userpayment' || Request::segment(3) == 'wishlist'):
+            //$two_tone_none = 'two-tone-none';
+            $top_bar_inner = 'top-bar-inner';
+            $style_2_inner = 'style-2-inner';
+            //echo 'sajdndsajkfdjfbsbfjadbfbdsbfsdfsfnssdnandnasnasdasfdfsajdndsajkfdjfbsbfjadbfbdsbfsdfsfnssdnandnasnasdasfdf-elseif';
+        elseif (Request::segment(1) == 'store-blog' || Request::segment(3) == 'blog' || Request::segment(3) == 'product'):
+            $top_bar_inner = 'top-bar-inner';
+            $style_2_inner = 'style-2-inner';
+            //echo 'sajdndsajkfdjfbsbfjadbfbdsbfsdfsfnssdnandnasnasdasfdfsajdndsajkfdjfbsbfjadbfbdsbfsdfsfnssdnandnasnasdasfdf-elseif-blog';
+        else:
+            //echo 'sajdndsajkfdjfbsbfjadbfbdsbfsdfsfnssdnandnasnasdasfdfsajdndsajkfdjfbsbfjadbfbdsbfsdfsfnssdnandnasnasdasfdf-else';
+        endif;
+
 ?>
 <!DOCTYPE html>
 <html lang="<?php echo e($currantLang); ?>" dir="<?php echo e(env('SITE_RTL') == 'on' ? 'rtl' : ''); ?>">
@@ -222,7 +243,7 @@
 
     <!-- Preloader End -->
     <div class="topbar-header">
-        <div class="top-bar style-2">
+        <div class="top-bar <?php echo e($top_bar_inner); ?> style-2">
             <div class="company-logo">
                 <a class="navbar-brand logos" href="<?php echo e(route('store.slug', $store->slug)); ?>">
                     <?php if(!empty($store->logo)): ?>
@@ -263,7 +284,7 @@
         </div>
 
         <!-- Start header section -->
-        <header class="header-area style-2">
+        <header class="header-area style-2 <?php echo e($style_2_inner); ?>">
             <div class="header-logo d-lg-none d-flex">
                 <a href="<?php echo e(route('store.slug', $store->slug)); ?>">
                     <?php if(!empty($store->logo)): ?>
