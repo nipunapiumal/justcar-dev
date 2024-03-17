@@ -22,6 +22,22 @@
     }
     $languages = \App\Models\Utility::languages($store->slug);
 
+    $header_background_dynamic = '';
+
+    //echo Request::segment(2);
+        if ($store->slug != Request::segment(2) && !Request::segment(3)):
+            $header_background_dynamic = 'header-background-dynamic';
+            //echo 'sajdndsajkfdjfbsbfjadbfbdsbfsdfsfnssdnandnasnasdasfdfsajdndsajkfdjfbsbfjadbfbdsbfsdfsfnssdnandnasnasdasfdf-if';
+        elseif (Request::segment(3) == 'cart' || Request::segment(3) == 'useraddress' || Request::segment(3) == 'userpayment' || Request::segment(3) == 'wishlist'):
+            $header_background_dynamic = 'header-background-dynamic';
+            //echo 'sajdndsajkfdjfbsbfjadbfbdsbfsdfsfnssdnandnasnasdasfdfsajdndsajkfdjfbsbfjadbfbdsbfsdfsfnssdnandnasnasdasfdf-elseif';
+        elseif (Request::segment(1) == 'store-blog' || Request::segment(3) == 'blog' || Request::segment(3) == 'product' || Request::segment(3) == 'apply'):
+            $header_background_dynamic = 'header-background-dynamic';
+            //echo 'sajdndsajkfdjfbsbfjadbfbdsbfsdfsfnssdnandnasnasdasfdfsajdndsajkfdjfbsbfjadbfbdsbfsdfsfnssdnandnasnasdasfdf-elseif-blog';
+        else:
+            //echo 'sajdndsajkfdjfbsbfjadbfbdsbfsdfsfnssdnandnasnasdasfdfsajdndsajkfdjfbsbfjadbfbdsbfsdfsfnssdnandnasnasdasfdf-else';
+        endif;
+
 ?>
 <!DOCTYPE html>
 <html lang="<?php echo e($currantLang); ?>" dir="<?php echo e(env('SITE_RTL') == 'on' ? 'rtl' : ''); ?>">
@@ -273,7 +289,7 @@
         </div>
     </div>
     <!-- Preloader End -->
-    <header class="header-area style-4">
+    <header class="header-area style-4 <?php echo e($header_background_dynamic); ?>">
 
         <div class="menu-button sidebar-button mobile-menu-btn">
             <svg width="15" height="12" viewBox="0 0 15 12" xmlns="http://www.w3.org/2000/svg">

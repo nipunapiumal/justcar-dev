@@ -75,21 +75,6 @@
 
                             </ul>
                         </div>
-                        <!-- Tags box Start -->
-                        {{-- <div class="widget tags-box widget-3">
-                            <h3 class="sidebar-title">Tags</h3>
-                            <div class="s-border"></div>
-                            <ul class="tags">
-                                <li><a href="#">Car Dealer</a></li>
-                                <li><a href="#">Auto</a></li>
-                                <li><a href="#">Car Website</a></li>
-                                <li><a href="#">Automobile</a></li>
-                                <li><a href="#">Theme</a></li>
-                                <li><a href="#">Events</a></li>
-                                <li><a href="#">Car Template</a></li>
-                                <li><a href="#">Buy Car</a></li>
-                            </ul>
-                        </div> --}}
                     </div>
                 </div>
             </div>
