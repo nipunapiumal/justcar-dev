@@ -284,6 +284,10 @@ input[type="tel"] {
     padding: 200px 0px 100px 0px;
     background-color: #f5f5f5;
 }
+.applyjob-board-title-33{
+    padding: 150px 0px 100px 0px;
+    background-color: #f5f5f5;
+}
 .job-description{
     color: #a8a8a8;
 }
@@ -347,6 +351,10 @@ input[type="tel"] {
   .inner-title{
     padding: 170px 0px 100px 0px;
   }
+  .inner-title-33{
+    padding: 100px 0px 100px 0px;
+  }
+
   .bi::before{
     line-height: inherit !important;
   }

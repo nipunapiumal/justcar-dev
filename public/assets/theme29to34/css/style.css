@@ -6345,6 +6345,7 @@ header.style-5 {
   border-bottom: 1px solid transparent;
   background-color: var(--white-color);
   position: relative;
+  border-bottom: 1px solid #eee;
 }
 @media (min-width: 1400px) and (max-width: 1599px) {
   header.style-5 {
