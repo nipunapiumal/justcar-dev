@@ -24146,7 +24146,7 @@ button {
   color: var(--primary) !important;
 }
 
-.job-title:hover{
+.service-info-2:hover h3 a{
   color: #fff !important;
 }
 

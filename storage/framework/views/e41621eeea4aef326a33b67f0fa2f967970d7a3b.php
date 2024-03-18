@@ -65,8 +65,6 @@
 
                             </ul>
                         </div>
-                        <!-- Tags box Start -->
-                        
                     </div>
                 </div>
             </div>

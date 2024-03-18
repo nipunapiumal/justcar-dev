@@ -22,6 +22,22 @@
     }
     $languages = \App\Models\Utility::languages($store->slug);
 
+    $nav_bar_background = '';
+
+    //echo Request::segment(2);
+        if ($store->slug != Request::segment(2) && !Request::segment(3)):
+            
+            //echo 'sajdndsajkfdjfbsbfjadbfbdsbfsdfsfnssdnandnasnasdasfdfsajdndsajkfdjfbsbfjadbfbdsbfsdfsfnssdnandnasnasdasfdf-if';
+        elseif (Request::segment(3) == 'cart' || Request::segment(3) == 'useraddress' || Request::segment(3) == 'userpayment' || Request::segment(3) == 'wishlist'):
+            $nav_bar_background = 'nav-bar-background';
+            //echo 'sajdndsajkfdjfbsbfjadbfbdsbfsdfsfnssdnandnasnasdasfdfsajdndsajkfdjfbsbfjadbfbdsbfsdfsfnssdnandnasnasdasfdf-elseif';
+        elseif (Request::segment(1) == 'store-blog' || Request::segment(3) == 'blog' || Request::segment(3) == 'product' || Request::segment(3) == 'apply'):
+            
+            //echo 'sajdndsajkfdjfbsbfjadbfbdsbfsdfsfnssdnandnasnasdasfdfsajdndsajkfdjfbsbfjadbfbdsbfsdfsfnssdnandnasnasdasfdf-elseif-blog';
+        else:
+            //echo 'sajdndsajkfdjfbsbfjadbfbdsbfsdfsfnssdnandnasnasdasfdfsajdndsajkfdjfbsbfjadbfbdsbfsdfsfnssdnandnasnasdasfdf-else';
+        endif;
+
 ?>
 <!DOCTYPE html>
 <html lang="<?php echo e($currantLang); ?>" dir="<?php echo e(env('SITE_RTL') == 'on' ? 'rtl' : ''); ?>">
@@ -65,7 +81,7 @@
             </div>
         </div>
 
-        <div class="main-navbar">
+        <div class="main-navbar <?php echo e($nav_bar_background); ?>">
             <div class="container">
                 <nav class="navbar navbar-expand-lg">
                     <!-- Logo -->

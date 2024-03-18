@@ -6,7 +6,7 @@
 <?php $__env->stopPush(); ?>
 <?php $__env->startSection('content'); ?>
     <!-- Sub banner start -->
-    <div class="contact-1 job-board-title">
+    <div class="contact-1 applyjob-board-title">
         <div class="container">
             <!-- Main title -->
                 <div class="main-title text-center">

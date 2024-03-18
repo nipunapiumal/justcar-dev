@@ -1,0 +1,1 @@
+<?php echo $__env->make('storefront.theme29.job_board.index', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH /Users/nippasmac/Sites/justcar-dev/resources/views/storefront/theme34/job_board/index.blade.php ENDPATH**/ ?>

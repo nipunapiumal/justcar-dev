@@ -1,1 +1,1 @@
-@include('storefront.theme26.gallery.index')
+@include('storefront.theme29.gallery.index')
