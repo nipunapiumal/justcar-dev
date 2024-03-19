@@ -19,8 +19,6 @@
                     <li class="d-inline">
                         <a href="<?php echo e(route('store.slug', $store->slug)); ?>"><?php echo e(__('Home')); ?></a>
                     </li>
-                    <li class="d-inline">/</li>
-                    <li class="breadcrumb-item active" aria-current="page"><?php echo e(__('My Cart')); ?></li>
                 </ul>
             </div>
         </div>
@@ -33,7 +31,7 @@
                     <div class="col-lg-12">
                         <div class="row">
                             <div class="col-lg-8 col-xl-9">
-                                <div class="shopping_cart_tabs ovyh cart-section">
+                                <div class="shopping_cart_tabs ovyh">
                                     <div class="shopping_cart_table">
                                         <table class="table table-responsive table-borderless">
 
@@ -235,7 +233,7 @@
                                                                         data-bs-placement="top"
                                                                         onclick="removeItem('delete-product-cart-<?php echo e($key); ?>')"
                                                                         data-bs-original-title="<?php echo e(__('Move to trash')); ?>"><span
-                                                                            class="flaticon-trash"></span></a>
+                                                                            class="far fa-trash-alt"></span></a>
                                                                     <?php echo Form::open([
                                                                         'method' => 'DELETE',
                                                                         'route' => ['delete.cart_item', [$store->slug, $product['product_id'], $product['variant_id']]],
@@ -295,6 +293,20 @@
         </section>
     <?php else: ?>
         <!-- Our Error Page -->
+
+        <div class="page-title-area pb-100 bg-img bg-s-cover" data-bg-image="<?php echo e(asset('assets/theme35to37/images/page-title-bg-4.jpg')); ?>">
+            <div class="container">
+                <div class="content">
+                    <h2 class="breadcrumb_title"><?php echo e(__('My Cart')); ?></h2>
+                    <ul class="list-unstyled">
+                        <li class="d-inline">
+                            <a href="<?php echo e(route('store.slug', $store->slug)); ?>"><?php echo e(__('Home')); ?></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
         <section class="our-error bgc-f9 cart-section pt-100">
             <div class="container">
                 <div class="row">

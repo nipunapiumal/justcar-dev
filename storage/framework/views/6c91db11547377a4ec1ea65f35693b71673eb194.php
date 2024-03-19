@@ -16,6 +16,7 @@
     $plan = \App\Models\Plan::find($creator->plan);
 
     $storethemesetting = \App\Models\Utility::demoStoreThemeSetting($store->id, $store->theme_dir);
+    
     $two_tone_none = '';
     $two_tone_done = '';
 

@@ -216,7 +216,7 @@
                 
                 <a href="<?php echo e(route('store.cart', $store->slug)); ?>">
                     <i class="bi bi-bag-check"></i> <?php echo e(__('Cart')); ?> <span class="shopping_count"
-                        id="shopping_count">(<?php echo e(!empty($total_item) ? $total_item : '0'); ?>)</span>
+                        id="shopping_count">(<?php echo e(!empty($total_item) ? $total_item : '0'); ?>)123</span>
                 </a>
                 <?php if(Utility::CustomerAuthCheck($store->slug) == true): ?>
                     <a href="<?php echo e(route('store.wishlist', $store->slug)); ?>">
@@ -288,7 +288,7 @@
                 <a href="<?php echo e(route('store.cart', $store->slug)); ?>" class="modal-btn header-cart-btn text-uppercase"
                     type="button">
                     <i class="bi bi-bag-check"></i> <?php echo e(__('Cart')); ?> <span class="shopping_count"
-                        id="shopping_count">(<?php echo e(!empty($total_item) ? $total_item : '0'); ?>)</span>
+                        id="shopping_count">(<?php echo e(!empty($total_item) ? $total_item : '0'); ?>)123</span>
                 </a>
             </div>
             <?php if(Utility::CustomerAuthCheck($store->slug) == false): ?>

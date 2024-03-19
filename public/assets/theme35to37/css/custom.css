@@ -306,3 +306,117 @@ input[type="tel"] {
 .nav-bar-background{
     background-color: #222;
 }
+
+/* === BASE HEADING === */ 
+
+.heading-1 {
+    position: relative;
+    padding: 0;
+    margin: 0;
+    font-weight: 400;
+    font-size: 40px;
+    color: #080808;
+    -webkit-transition: all 0.4s ease 0s;
+    -o-transition: all 0.4s ease 0s;
+    transition: all 0.4s ease 0s;
+  }
+
+  /* === HEADING STYLE #1 === */
+.one .heading-1 {
+    text-align: center;
+    text-transform: uppercase;
+    padding-bottom: 5px;
+  }
+  .one .heading-1:before {
+    width: 28px;
+    height: 5px;
+    display: block;
+    content: "";
+    position: absolute;
+    bottom: 3px;
+    left: 50%;
+    margin-left: -14px;
+    background-color: var(--primary);
+  }
+  .one .heading-1:after {
+    width: 100px;
+    height: 1px;
+    display: block;
+    content: "";
+    position: relative;
+    margin-top: 10px;
+    left: 50%;
+    margin-left: -50px;
+    background-color: var(--primary);
+  }
+  
+  .inner-title{
+    padding: 170px 0px 100px 0px;
+  }
+  .inner-title-33{
+    padding: 100px 0px 100px 0px;
+  }
+
+  .bi::before{
+    line-height: inherit !important;
+  }
+
+  /* Product page */
+  .swiper-wrapper-1{
+    position: relative;
+    width: 100%;
+    height: auto;
+    z-index: 1;
+    display: flex;
+    transition-property: transform;
+    box-sizing: content-box;
+  }
+
+  /* Header background color */
+  .header-background-dynamic{
+    background-color: var(--primary) !important;
+  }
+
+  /* Count section - cart page */
+  .count-input {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+  .count-input .qty-minus,
+.count-input .qty-plus {
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 18px;
+    letter-spacing: 5px;
+    background-color: var(--primary);
+    border: 1px solid var(--primary);
+    color: #fff;
+    -webkit-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+
+.btn-thm {
+    background-color: #222;
+    border: 1px solid #222;
+    padding: 10px 20px;
+    border-radius: 8px;
+    color: #fff;
+    -webkit-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+.btn-thm:hover {
+    background-color: var(--primary);
+    border: 1px solid var(--primary);
+    color: #fff;
+}
+
+@media (max-width: 768px){
+    .form-control{
+        width: auto !important;
+    }
+}

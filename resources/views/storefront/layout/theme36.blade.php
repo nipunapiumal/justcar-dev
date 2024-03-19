@@ -177,6 +177,13 @@
                     </div>
                     <div class="more-option mobile-item">
                         <div class="item">
+                            <a href="{{ route('store.cart', $store->slug) }}" class="modal-btn header-cart-btn text-uppercase"
+                                type="button">
+                                <i class="far fa-shopping-cart"></i> <span class="shopping_count"
+                                    id="shopping_count">({{ !empty($total_item) ? $total_item : '0' }})</span>
+                            </a>
+                        </div>
+                        <div class="item">
                             <div class="language">
                                 <select class="nice-select" onchange="window.location = $(this).val()">
                                     @foreach ($languages as $language)

@@ -29,7 +29,7 @@
             
             //echo 'sajdndsajkfdjfbsbfjadbfbdsbfsdfsfnssdnandnasnasdasfdfsajdndsajkfdjfbsbfjadbfbdsbfsdfsfnssdnandnasnasdasfdf-if';
         elseif (Request::segment(3) == 'cart' || Request::segment(3) == 'useraddress' || Request::segment(3) == 'userpayment' || Request::segment(3) == 'wishlist'):
-            $nav_bar_background = 'nav-bar-background';
+            //$nav_bar_background = 'nav-bar-background';
             //echo 'sajdndsajkfdjfbsbfjadbfbdsbfsdfsfnssdnandnasnasdasfdfsajdndsajkfdjfbsbfjadbfbdsbfsdfsfnssdnandnasnasdasfdf-elseif';
         elseif (Request::segment(1) == 'store-blog' || Request::segment(3) == 'blog' || Request::segment(3) == 'product' || Request::segment(3) == 'apply'):
             
@@ -191,6 +191,13 @@
                         </ul>
                     </div>
                     <div class="more-option mobile-item">
+                        <div class="item">
+                            <a href="{{ route('store.cart', $store->slug) }}" class="modal-btn header-cart-btn text-uppercase"
+                                type="button" style="color:#fff;">
+                                <i class="far fa-shopping-cart"></i> <span class="shopping_count"
+                                    id="shopping_count">({{ !empty($total_item) ? $total_item : '0' }})</span>
+                            </a>
+                        </div>
                         <div class="item">
                             <div class="language">
                                 <select class="nice-select" onchange="window.location = $(this).val()">

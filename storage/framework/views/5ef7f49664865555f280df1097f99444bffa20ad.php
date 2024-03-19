@@ -183,6 +183,13 @@
                     </div>
                     <div class="more-option mobile-item">
                         <div class="item">
+                            <a href="<?php echo e(route('store.cart', $store->slug)); ?>" class="modal-btn header-cart-btn text-uppercase"
+                                type="button">
+                                <i class="far fa-shopping-cart"></i> <span class="shopping_count"
+                                    id="shopping_count">(<?php echo e(!empty($total_item) ? $total_item : '0'); ?>)</span>
+                            </a>
+                        </div>
+                        <div class="item">
                             <div class="language">
                                 <select class="nice-select" onchange="window.location = $(this).val()">
                                     <?php $__currentLoopData = $languages; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $language): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
