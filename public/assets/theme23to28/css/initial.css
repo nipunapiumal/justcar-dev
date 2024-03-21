@@ -650,7 +650,7 @@
 }
 
 #main-header-4 .header-centar .navbar-collapse{
-    max-width: 900px;
+    max-width: 730px;
     margin: 0 10px 0 auto;
 }
 
@@ -1073,7 +1073,7 @@
     }
 
     #main-header-2 .navbar-expand-lg .navbar-nav .nav-link:hover {
-        color: #fff!;
+        color: #fff;
     }
 
     #main-header-5 .navbar-expand-lg .navbar-nav .nav-link:hover {

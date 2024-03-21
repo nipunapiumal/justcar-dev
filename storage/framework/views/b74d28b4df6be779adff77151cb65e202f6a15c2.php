@@ -47,6 +47,7 @@
                                     class="read-more"><?php echo e(__('Apply')); ?></a>
                             </div>
                         </div>
+                        
                     </div>
                 <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
             </div>

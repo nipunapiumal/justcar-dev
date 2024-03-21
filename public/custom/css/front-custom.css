@@ -3,29 +3,7 @@
     height:250px !important;
     object-fit: cover !important;
 }
-.img-width-height{
-    height:250px !important;
-    width: 550px !important;
-    object-fit: cover !important;
-}
 .img-height-407{
     height:407px !important;
     object-fit: cover !important;
-}
-.sidebar-color{
-    background-color: #f5f5f5;
-}
-.gallary-categories{
-    font-size: 18px;
-    font-weight: 600;
-    color: #222;
-}
-.portfolio-content-inner{
-    background-color: #f5f5f5;
-}
-.sidebar-title{
-    color: #222;;
-}
-.pt-20{
-    padding: 20px;
 }

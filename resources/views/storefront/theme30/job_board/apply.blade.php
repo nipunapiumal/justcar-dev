@@ -6,7 +6,7 @@
 @endpush
 @section('content')
     <!-- Sub banner start -->
-    <div class="contact-1 applyjob-board-title">
+    <div class="contact-1 applyjob-board-title mt-50">
         <div class="container">
             <!-- Main title -->
                 <div class="main-title text-center">

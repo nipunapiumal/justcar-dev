@@ -57,6 +57,7 @@
                                     class="read-more">{{ __('Apply') }}</a>
                             </div>
                         </div>
+                        
                     </div>
                 @endforeach
             </div>
