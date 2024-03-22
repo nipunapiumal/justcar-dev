@@ -52,11 +52,11 @@
                                     </div>
                                 </div>
                             </div>
-                        @endforeach
+                        @endforeach 
                     </div>
                 </div>
-                <div class="col-lg-2 col-md-12 sidebar-color">
-                    <div class="sidebar-right pt-20">
+                <div class="col-lg-2 col-md-12">
+                    <div class="sidebar-right">
                         <!-- Posts By Category Start -->
                         <div class="posts-by-category widget">
                             <h5 class="sidebar-title">{{ __('Categories') }}</h5>
@@ -64,15 +64,13 @@
                             <ul class="list-unstyled list-cat">
                                 @foreach ($galleryCategories as $category)
                                     <li>
-                                        <a class="sidebar-title" href="{{ route('store.gallery', [$store->slug, $category->id]) }}">
+                                        <a href="{{ route('store.gallery', [$store->slug, $category->id]) }}">
                                             {{ $category->name }} <span>
                                                 {{-- <small>({{ date('M d, Y', strtotime($category->created_at)) }})</small> --}}
                                             </span>
                                         </a>
                                     </li>
-                                @endforeach
-
-
+                                @endforeach                           
                             </ul>
                         </div>
                     </div>

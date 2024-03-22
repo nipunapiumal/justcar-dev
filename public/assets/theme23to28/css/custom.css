@@ -819,3 +819,12 @@ input[type="tel"] {
 .content-area-apply-title{
     margin: 100px 0px 0px 0px;
 }
+
+.cart-total-box ul li {
+    line-height: 33px;
+    width: 100%;
+    font-size: 15px;
+}
+.pull-right {
+    float: right;
+}

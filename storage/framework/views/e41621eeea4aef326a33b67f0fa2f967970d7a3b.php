@@ -42,11 +42,11 @@
                                     </div>
                                 </div>
                             </div>
-                        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?> 
                     </div>
                 </div>
-                <div class="col-lg-2 col-md-12 sidebar-color">
-                    <div class="sidebar-right pt-20">
+                <div class="col-lg-2 col-md-12">
+                    <div class="sidebar-right">
                         <!-- Posts By Category Start -->
                         <div class="posts-by-category widget">
                             <h5 class="sidebar-title"><?php echo e(__('Categories')); ?></h5>
@@ -54,15 +54,13 @@
                             <ul class="list-unstyled list-cat">
                                 <?php $__currentLoopData = $galleryCategories; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $category): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                     <li>
-                                        <a class="sidebar-title" href="<?php echo e(route('store.gallery', [$store->slug, $category->id])); ?>">
+                                        <a href="<?php echo e(route('store.gallery', [$store->slug, $category->id])); ?>">
                                             <?php echo e($category->name); ?> <span>
                                                 
                                             </span>
                                         </a>
                                     </li>
-                                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-
-
+                                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>                           
                             </ul>
                         </div>
                     </div>

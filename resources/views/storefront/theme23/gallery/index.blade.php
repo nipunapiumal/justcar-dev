@@ -65,12 +65,12 @@
                     <div class="sidebar-right">
                         <!-- Posts By Category Start -->
                         <div class="posts-by-category widget">
-                            <h3 class="sidebar-title">{{ __('Categories') }}</h3>
+                            <h5 class="sidebar-title">{{ __('Categories') }}</h5>
                             <div class="s-border"></div>
                             <ul class="list-unstyled list-cat">
                                 @foreach ($galleryCategories as $category)
                                     <li>
-                                        <a href="{{ route('store.gallery', [$store->slug, $category->id]) }}">
+                                        <a class="sidebar-title" href="{{ route('store.gallery', [$store->slug, $category->id]) }}">
                                             {{ $category->name }} <span>
                                                 {{-- <small>({{ date('M d, Y', strtotime($category->created_at)) }})</small> --}}
                                             </span>

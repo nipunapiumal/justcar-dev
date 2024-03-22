@@ -70,7 +70,7 @@
             <div class="row g-0 contact-innner">
                 <div class="col-lg-12 col-md-12">
                     <div class="contact-form" style="border-right: none">
-                        <h3 class="mb-20"><?php echo e(__('Apply To') . ' ' . $jobBoard->position . ' (' . $jobBoard->title . ')'); ?>
+                        <h3 class="mb-20 mt-50 text-center"><?php echo e(__('Apply To') . ' ' . $jobBoard->position . ' (' . $jobBoard->title . ')'); ?>
 
                         </h3>
                         <?php echo e(Form::open(['url' => 'job-applicants', 'method' => 'post', 'enctype' => 'multipart/form-data', 'id' => 'contact-form'])); ?>
