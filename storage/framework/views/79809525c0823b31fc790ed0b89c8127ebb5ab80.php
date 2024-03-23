@@ -26,72 +26,137 @@
 
 <!-- Shop Checkouts Content -->
 
-<section class="shop-cart bgc-f9 pt0 mt-50 mb-50">
+<div class="shopping-area cart ptb-100">
     <div class="container">
-        <div class="row">
-            <div class="col-lg-12">
-                <div class="row">
-                    <div class="col-lg-8 col-xl-9">
-                        <div class="shopping_cart_tabs ovyh">
-                            <div class="shopping_cart_table">
-                                <table class="table table-responsive table-borderless">
+        <div class="row justify-content-center gx-xl-5">
+            <div class="col-xl-9">
+                <form action="#">
+                    <div class="item-list border mb-30 table-responsive">
+                        <table class="shopping-table">
+                            <thead>
+                                <tr class="table-heading">
+                                    <th class="product-subtotal t-600"></th>
+                                    <th  class="product-name t-600"><?php echo e(__('Product')); ?></th>
+                                    <th class="description t-600"><?php echo e(__('Price')); ?></th>
+                                    <th class="product-price t-600"><?php echo e(__('Quantity')); ?></th>
+                                    <th class="product-quantity t-600"><?php echo e(__('Tax')); ?></th>
+                                    <th class="product-subtotal t-600"><?php echo e(__('Total')); ?></th>
+                                    <th class="product-remove">&nbsp;</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <?php if(!empty($products)): ?>
+                                    <?php
+                                        $sub_tax = 0;
+                                        $total = 0;
+                                    ?>
+                                    <?php $__currentLoopData = $products['products']; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $key => $product): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                        <?php if($product['variant_id'] != 0): ?>
+                                        <tr class="item" data-id="<?php echo e($key); ?>">
+                                            <td class="product-img">
+                                                <div class="image">
+                                                    <a href="#">
+                                                        <?php if(!empty($product['image'])): ?>
+                                                            <img alt="Image placeholder"
+                                                                src="<?php echo e(asset($product['image'])); ?>"
+                                                                class="cover">
+                                                        <?php else: ?>
+                                                            <img alt="Image placeholder"
+                                                                src="<?php echo e(asset(Storage::url('uploads/is_cover_image/default.jpg'))); ?>"
+                                                                class="cover">
+                                                        <?php endif; ?>
+                                                    </a>
+                                                </div>
+                                            </td>
+                                            <td class="product-desc">
+                                                <h6>
+                                                    <a class="product-title mb-10" href="<?php echo e(route('store.product.product_view', [$store->slug, $product['id']])); ?>"><?php echo e($product['product_name']); ?></a>
+                                                </h6>
+                                            </td>
+                                            <td class="product-price">
+                                                <h6 class="m-0"><?php echo e(\App\Models\Utility::priceFormat($product['price'])); ?></h6>
+                                            </td>
+                                            <td class="qty">
+                                                <div class="quantity-input" data-id="<?php echo e($key); ?>">
+                                                    <input type="button" value="<"
+                                                                class="qty-minus product_qty">
+                                                            <input type="text"
+                                                                value="<?php echo e($product['quantity']); ?>"
+                                                                data-id="<?php echo e($product['product_id']); ?>"
+                                                                class="bx-cart-qty qty form-control form-control-sm text-center product_qty_input"
+                                                                id="product_qty">
+                                                            <input type="button" value=">"
+                                                                class="qty-plus product_qty">
+                                                </div>
+                                            </td>
+                                            <td class="product-price">
+                                                <?php
+                                                    $total_tax = 0;
+                                                ?>
+                                                <h6 class="m-0">
+                                                    <?php if(!empty($product['tax'])): ?>
+                                                            <?php $__currentLoopData = $product['tax']; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $tax): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                                                <?php
+                                                                    $sub_tax = ($product['price'] * $product['quantity'] * $tax['tax']) / 100;
+                                                                    $total_tax += $sub_tax;
+                                                                ?>
+                                                                <?php echo e($tax['tax_name'] . ' ' . $tax['tax'] . '%' . ' (' . $sub_tax . ')'); ?>
 
-                                    <thead class="thead-dark">
-                                        <tr>
-                                            <th class="pl30" colspan="1" scope="row"><?php echo e(__('Product')); ?>
+                                                            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                                                        <?php else: ?>
+                                                            -
+                                                        <?php endif; ?>
+                                                </h6>
+                                            </td>
+                                            <td class="text-right">
+                                                <!-- Actions -->
+                                                <div class="actions ml-3">
+                                                    <a href="#!" class="action-item mr-2"
+                                                        data-toggle="tooltip"
+                                                        data-original-title="<?php echo e(__('Move to trash')); ?>"
+                                                        data-confirm="<?php echo e(__('Are You Sure?') . ' | ' . __('This action can not be undone. Do you want to continue?')); ?>"
+                                                        data-confirm-yes="document.getElementById('delete-product-cart-<?php echo e($key); ?>').submit();">
+                                                        <i class="fas fa-times"></i>
+                                                    </a>
+                                                    <?php echo Form::open([
+                                                        'method' => 'DELETE',
+                                                        'route' => ['delete.cart_item', [$store->slug, $product['product_id'], $product['variant_id']]],
+                                                        'id' => 'delete-product-cart-' . $key,
+                                                    ]); ?>
 
-                                            </th>
-                                            <th scope="col"><?php echo e(__('Price')); ?></th>
-                                            <th scope="col"><?php echo e(__('Quantity')); ?></th>
-                                            <th scope="col"><?php echo e(__('Tax')); ?></th>
-                                            <th scope="col" class="text-center"><?php echo e(__('Total')); ?></th>
-                                            <th scope="col"></th>
+                                                    <?php echo Form::close(); ?>
+
+                                                </div>
+                                            </td>
                                         </tr>
-                                    </thead>
-                                    <tbody class="table_body">
-                                        <?php if(!empty($products)): ?>
-                                            <?php
-                                                $sub_tax = 0;
-                                                $total = 0;
-                                            ?>
-                                            <?php $__currentLoopData = $products['products']; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $key => $product): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                                                <?php if($product['variant_id'] != 0): ?>
-                                                    <tr class="alert" data-id="<?php echo e($key); ?>">
-                                                        <td>
+                                        <?php else: ?>
+                                            <tr class="item" data-id="<?php echo e($key); ?>">
+                                                <td class="product-img">
+                                                    <div class="image">
+                                                        <a href="#">
                                                             <?php if(!empty($product['image'])): ?>
-                                                                <img alt=""
+                                                                <img alt="Image placeholder"
                                                                     src="<?php echo e(asset($product['image'])); ?>"
                                                                     class="cover">
                                                             <?php else: ?>
-                                                                <img alt=""
+                                                                <img alt="Image placeholder"
                                                                     src="<?php echo e(asset(Storage::url('uploads/is_cover_image/default.jpg'))); ?>"
                                                                     class="cover">
                                                             <?php endif; ?>
-                                                        </td>
-                                                        <td scope="row">
-                                                            <div class="media align-items-center">
-                                                                <a href="<?php echo e(route('store.product.product_view', [$store->slug, $product['id']])); ?>"
-                                                                    class="text-dark c-list-title mb-0 cart_word_break"><?php echo e($product['product_name'] . ' - ' . $product['variant_name']); ?></a>
-                                                            </div>
-                                                        </td>
-                                                        <td class="price">
-                                                            <div class="media-body pl-3">
-                                                                <span
-                                                                    class="font-weight-bold mb-2 t-gray p-title"><?php echo e(__('Price')); ?></span>
-                                                                <div class="lh-100">
-                                                                    <span
-                                                                        class="t-black15 p-price font-weight-bold mb-0">
-                                                                        <?php echo e(\App\Models\Utility::priceFormat($product['variant_price'])); ?>
-
-                                                                    </span>
-                                                                </div>
-                                                            </div>
-                                                        </td>
-                                                        <td class="qty-box">
-                                                            <span
-                                                                class="font-weight-bold t-gray p-title"><?php echo e(__('Quantity')); ?></span>
-                                                            <div class="count-input" data-id="<?php echo e($key); ?>">
-                                                                <input type="button" value="<"
+                                                        </a>
+                                                    </div>
+                                                </td>
+                                                <td class="product-desc">
+                                                    <h6>
+                                                        <a class="product-title mb-10" href="<?php echo e(route('store.product.product_view', [$store->slug, $product['id']])); ?>"><?php echo e($product['product_name']); ?></a>
+                                                    </h6>
+                                                </td>
+                                                <td class="product-price">
+                                                    <h6 class="m-0"><?php echo e(\App\Models\Utility::priceFormat($product['price'])); ?></h6>
+                                                </td>
+                                                <td class="qty">
+                                                    <div class="quantity-input" data-id="<?php echo e($key); ?>">
+                                                        <input type="button" value="<"
                                                                     class="qty-minus product_qty">
                                                                 <input type="text"
                                                                     value="<?php echo e($product['quantity']); ?>"
@@ -100,115 +165,14 @@
                                                                     id="product_qty">
                                                                 <input type="button" value=">"
                                                                     class="qty-plus product_qty">
-                                                            </div>
-                                                        </td>
-                                                        <td>
-                                                            <div class="font-weight-bold t-gray p-title">
-                                                                <?php echo e(__('Tax')); ?></div>
-                                                            <?php
-                                                                $total_tax = 0;
-                                                            ?>
-                                                            <?php if(!empty($product['tax'])): ?>
-                                                                <?php $__currentLoopData = $product['tax']; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $tax): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                                                                    <?php
-                                                                        $sub_tax = ($product['variant_price'] * $product['quantity'] * $tax['tax']) / 100;
-                                                                        $total_tax += $sub_tax;
-                                                                    ?>
-                                                                    <p class="t-gray p-title mb-0">
-                                                                        <?php echo e($tax['tax_name'] . ' ' . $tax['tax'] . '%' . ' (' . $sub_tax . ')'); ?>
-
-                                                                    </p>
-                                                                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-                                                            <?php else: ?>
-                                                                -
-                                                            <?php endif; ?>
-                                                        </td>
-                                                        <td>
-                                                            <span
-                                                                class="font-weight-bold t-gray p-title"><?php echo e(__('Total')); ?></span>
-                                                            <?php
-                                                                $totalprice = $product['variant_price'] * $product['quantity'] + $total_tax;
-                                                                $total += $totalprice;
-                                                            ?>
-                                                            <p class="pt-price t-black15">
-                                                                <?php echo e(\App\Models\Utility::priceFormat($totalprice)); ?>
-
-                                                            </p>
-                                                        </td>
-                                                        <td class="text-right">
-                                                            <!-- Actions -->
-                                                            <div class="actions ml-3">
-                                                                <a href="#!" class="action-item mr-2"
-                                                                    data-toggle="tooltip"
-                                                                    data-original-title="<?php echo e(__('Move to trash')); ?>"
-                                                                    data-confirm="<?php echo e(__('Are You Sure?') . ' | ' . __('This action can not be undone. Do you want to continue?')); ?>"
-                                                                    data-confirm-yes="document.getElementById('delete-product-cart-<?php echo e($key); ?>').submit();">
-                                                                    <i class="fas fa-times"></i>
-                                                                </a>
-                                                                <?php echo Form::open([
-                                                                    'method' => 'DELETE',
-                                                                    'route' => ['delete.cart_item', [$store->slug, $product['product_id'], $product['variant_id']]],
-                                                                    'id' => 'delete-product-cart-' . $key,
-                                                                ]); ?>
-
-                                                                <?php echo Form::close(); ?>
-
-                                                            </div>
-                                                        </td>
-                                                    </tr>
-                                                    <tr class="table-divider"></tr>
-                                                <?php else: ?>
-                                                    <tr class="alert" data-id="<?php echo e($key); ?>">
-                                                        <th class="pl30" scope="row">
-                                                            <div class="cart_list d-flex align-items-center">
-                                                                <div style="width: 95px;height: 95px;"
-                                                                    class="pr-2">
-                                                                    <a href="#">
-
-                                                                        <?php if(!empty($product['image'])): ?>
-                                                                            <img alt="Image placeholder"
-                                                                                src="<?php echo e(asset($product['image'])); ?>"
-                                                                                class="cover">
-                                                                        <?php else: ?>
-                                                                            <img alt="Image placeholder"
-                                                                                src="<?php echo e(asset(Storage::url('uploads/is_cover_image/default.jpg'))); ?>"
-                                                                                class="cover">
-                                                                        <?php endif; ?>
-                                                                    </a>
-                                                                </div>
-                                                                <div class="p-2" style="width:250px">
-                                                                    <a href="<?php echo e(route('store.product.product_view', [$store->slug, $product['id']])); ?>"
-                                                                        class="cart_title text-dark c-list-title mb-0 cart_word_break"><?php echo e($product['product_name']); ?></a>
-                                                                </div>
-
-                                                            </div>
-                                                            
-                                                        </th>
-                                                        <td> <?php echo e(\App\Models\Utility::priceFormat($product['price'])); ?>
-
-                                                        </td>
-                                                        <td class="qty-box">
-
-                                                            <div class="count-input" data-id="<?php echo e($key); ?>">
-                                                                <input type="button" value="<"
-                                                                    class="qty-minus product_qty">
-                                                                <input type="text"
-                                                                    value="<?php echo e($product['quantity']); ?>"
-                                                                    data-id="<?php echo e($product['product_id']); ?>"
-                                                                    class="bx-cart-qty qty form-control form-control-sm text-center product_qty_input"
-                                                                    id="product_qty">
-                                                                <input type="button" value=">"
-                                                                    class="qty-plus product_qty">
-                                                            </div>
-
-
-                                                            
-                                                        </td>
-                                                        <td style="white-space: nowrap;">
-                                                            <?php
-                                                                $total_tax = 0;
-                                                            ?>
-                                                            <?php if(!empty($product['tax'])): ?>
+                                                    </div>
+                                                </td>
+                                                <td class="product-price">
+                                                    <?php
+                                                        $total_tax = 0;
+                                                    ?>
+                                                    <h6 class="m-0">
+                                                        <?php if(!empty($product['tax'])): ?>
                                                                 <?php $__currentLoopData = $product['tax']; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $tax): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                                                     <?php
                                                                         $sub_tax = ($product['price'] * $product['quantity'] * $tax['tax']) / 100;
@@ -220,78 +184,49 @@
                                                             <?php else: ?>
                                                                 -
                                                             <?php endif; ?>
-                                                        </td>
-                                                        <td>
-                                                            <?php
+                                                    </h6>
+                                                </td>
+                                                <td>
+                                                    <h6 class="m-0">
+                                                        <?php
                                                                 $totalprice = $product['price'] * $product['quantity'] + $total_tax;
                                                                 $total += $totalprice;
                                                             ?>
                                                             <?php echo e(\App\Models\Utility::priceFormat($totalprice)); ?>
 
-                                                        </td>
-                                                        <td class="pr25">
-                                                            <a href="javascript:void(0)" data-bs-toggle="tooltip"
-                                                                data-bs-placement="top"
-                                                                onclick="removeItem('delete-product-cart-<?php echo e($key); ?>')"
-                                                                data-bs-original-title="<?php echo e(__('Move to trash')); ?>"><span
-                                                                    class="far fa-trash-alt"></span></a>
-                                                            <?php echo Form::open([
-                                                                'method' => 'DELETE',
-                                                                'route' => ['delete.cart_item', [$store->slug, $product['product_id'], $product['variant_id']]],
-                                                                'id' => 'delete-product-cart-' . $key,
-                                                            ]); ?>
+                                                    </h6>
+                                                </td>
+                                                <td class="pr25">
+                                                    <a href="javascript:void(0)" data-bs-toggle="tooltip"
+                                                        data-bs-placement="top"
+                                                        onclick="removeItem('delete-product-cart-<?php echo e($key); ?>')"
+                                                        data-bs-original-title="<?php echo e(__('Move to trash')); ?>"><span
+                                                            class="fal fa-trash-alt"></span></a>
+                                                    <?php echo Form::open([
+                                                        'method' => 'DELETE',
+                                                        'route' => ['delete.cart_item', [$store->slug, $product['product_id'], $product['variant_id']]],
+                                                        'id' => 'delete-product-cart-' . $key,
+                                                    ]); ?>
 
-                                                            <?php echo Form::close(); ?>
+                                                    <?php echo Form::close(); ?>
 
-                                                        </td>
-                                                    </tr>
-                                                <?php endif; ?>
-                                            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                                                </td>
+                                            </tr>
                                         <?php endif; ?>
-
-
-
-
-
-                                    </tbody>
-                                </table>
-                            </div>
-
-                        </div>
-                        
+                                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                                <?php endif; ?>
+                            </tbody>
+                        </table>
                     </div>
-                    <div class="col-md-6 col-lg-4 col-xl-3">
-                        <div class="order_sidebar_widget style2">
-                            
-                            <ul class="mb15">
-                                
-                                <li class="subtitle">
-                                    <p><?php echo e(__('Total value')); ?> <span
-                                            class="float-end cart-total totals color-orose">
-                                            <?php echo e(\App\Models\Utility::priceFormat(!empty($total) ? $total : 0)); ?></span>
-                                    </p>
-                                </li>
-                            </ul>
-                            <div class="ui_kit_button payment_widget_btn">
-                                <button type="button" class="btn btn-thm btn-block"
-                                    onclick="location.href='<?php echo e(route('user-address.useraddress', $store->slug)); ?>';">
-                                    <?php echo e(__('Proceed to checkout')); ?>
-
-                                </button>
-                                <button type="button" class="btn btn-light mt-2 btn-block"
-                                    onclick="location.href='<?php echo e(route('store.slug', $store->slug)); ?>';">
-                                    <?php echo e(__('Return to shop')); ?>
-
-                                </button>
-                                
-                            </div>
-                        </div>
+                    <div class="btn-groups gap-3 justify-content-end w-100">
+                        <a href="#" class="btn btn-md btn-outline" title="Back to Home" target="_self">Back to Home</a>
+                        <a href="#" class="btn btn-md btn-primary" title="Checkout" target="_self" onclick="location.href='<?php echo e(route('user-address.useraddress', $store->slug)); ?>';">Checkout</a>
                     </div>
-                </div>
+                </form>
             </div>
         </div>
     </div>
-</section>
+</div>
     <?php else: ?>
         <!-- Our Error Page -->
 
