@@ -149,18 +149,18 @@
                                             <a href="<?php echo e(route('store.product.product_view', [$store->slug, $product['id']])); ?>"><?php echo e($product['product_name']); ?></a>
                                         </td>
                                         <td class="d_none"><?php echo e(\App\Models\Utility::priceFormat($product['price'])); ?></td>
-                                        <td class="qty-box">
+                                        <td class="qty">
 
                                             <div class="count-input" data-id="<?php echo e($key); ?>">
                                                 <input type="button" value="<"
-                                                    class="qty-minus product_qty">
-                                                <input type="text"
-                                                    value="<?php echo e($product['quantity']); ?>"
-                                                    data-id="<?php echo e($product['product_id']); ?>"
-                                                    class="bx-cart-qty qty form-control form-control-sm text-center product_qty_input"
-                                                    id="product_qty">
-                                                <input type="button" value=">"
-                                                    class="qty-plus product_qty">
+                                                                    class="qty-minus product_qty">
+                                                                <input type="text"
+                                                                    value="<?php echo e($product['quantity']); ?>"
+                                                                    data-id="<?php echo e($product['product_id']); ?>"
+                                                                    class="bx-cart-qty qty form-control form-control-sm text-center product_qty_input"
+                                                                    id="product_qty">
+                                                                <input type="button" value=">"
+                                                                    class="qty-plus product_qty">
                                             </div>
 
 
